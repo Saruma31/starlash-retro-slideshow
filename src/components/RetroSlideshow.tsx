@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Star, Zap } from 'lucide-react';
 import { ScrollArea } from './ui/scroll-area';
@@ -179,10 +180,10 @@ const RetroSlideshow = () => {
           key={star.id}
           className="absolute animate-pulse"
           style={{
-            left: ${star.x}%,
-            top: ${star.y}%,
-            width: ${star.size}px,
-            height: ${star.size}px,
+            left: `${star.x}%`,
+            top: `${star.y}%`,
+            width: `${star.size}px`,
+            height: `${star.size}px`,
           }}
         >
           <Star className="text-white opacity-70" size={star.size} />
@@ -203,11 +204,11 @@ const RetroSlideshow = () => {
                   <button
                     key={index}
                     onClick={() => goToSlide(index)}
-                    className={w-3 h-3 border-2 flex-shrink-0 ${
+                    className={`w-3 h-3 border-2 flex-shrink-0 ${
                       index === currentSlide
                         ? 'bg-cyan-400 border-cyan-400'
                         : 'bg-transparent border-gray-500'
-                    } hover:border-cyan-400 transition-colors}
+                    } hover:border-cyan-400 transition-colors`}
                   />
                 ))}
               </div>
@@ -221,9 +222,9 @@ const RetroSlideshow = () => {
           <button
             onClick={prevSlide}
             disabled={currentSlide === 0}
-            className={absolute left-4 top-1/2 transform -translate-y-1/2 z-20 pixel-font bg-purple-600 hover:bg-purple-500 text-white px-4 py-3 border-2 border-cyan-400 transition-all duration-200 ${
+            className={`absolute left-4 top-1/2 transform -translate-y-1/2 z-20 pixel-font bg-purple-600 hover:bg-purple-500 text-white px-4 py-3 border-2 border-cyan-400 transition-all duration-200 ${
               currentSlide === 0 ? 'opacity-30 cursor-not-allowed' : 'hover:border-yellow-400 hover:shadow-lg glow-animation'
-            }}
+            }`}
           >
             <ChevronLeft size={24} />
           </button>
@@ -232,9 +233,9 @@ const RetroSlideshow = () => {
           <button
             onClick={nextSlide}
             disabled={currentSlide === slides.length - 1}
-            className={absolute right-4 top-1/2 transform -translate-y-1/2 z-20 pixel-font bg-purple-600 hover:bg-purple-500 text-white px-4 py-3 border-2 border-cyan-400 transition-all duration-200 ${
+            className={`absolute right-4 top-1/2 transform -translate-y-1/2 z-20 pixel-font bg-purple-600 hover:bg-purple-500 text-white px-4 py-3 border-2 border-cyan-400 transition-all duration-200 ${
               currentSlide === slides.length - 1 ? 'opacity-30 cursor-not-allowed' : 'hover:border-yellow-400 hover:shadow-lg glow-animation'
-            }}
+            }`}
           >
             <ChevronRight size={24} />
           </button>
@@ -300,7 +301,7 @@ const RetroSlideshow = () => {
                       {currentSlideData.content?.map((item, index) => (
                         <div
                           key={index}
-                          className={pixel-font ${
+                          className={`pixel-font ${
                             item.startsWith('🎉') || item.startsWith('⚠️')
                               ? 'text-yellow-400 font-bold text-lg md:text-xl lg:text-2xl'
                               : item.startsWith('•')
@@ -308,7 +309,7 @@ const RetroSlideshow = () => {
                               : item === ''
                               ? 'h-2'
                               : 'text-white text-sm md:text-base lg:text-lg'
-                          } leading-relaxed break-words}
+                          } leading-relaxed break-words`}
                         >
                           {item}
                         </div>
