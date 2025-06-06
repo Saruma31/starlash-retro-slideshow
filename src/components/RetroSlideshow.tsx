@@ -172,7 +172,7 @@ const RetroSlideshow = () => {
         </div>
 
         {/* Main content area with integrated navigation */}
-        <div className="flex-1 flex items-center justify-center p-8 relative">
+        <div className="flex-1 flex items-center justify-center p-4 relative">
           {/* Left Navigation Button */}
           <button
             onClick={prevSlide}
@@ -195,41 +195,41 @@ const RetroSlideshow = () => {
             <ChevronRight size={24} />
           </button>
 
-          <div className="max-w-4xl w-full mx-8">
+          <div className="max-w-5xl w-full mx-8 h-full flex items-center">
             {currentSlideData.type === 'title' && (
-              <div className="text-center space-y-8">
+              <div className="text-center space-y-6 w-full">
                 <div className="space-y-4">
-                  <div className="pixel-font text-6xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-pink-500 to-yellow-400 animate-pulse">
+                  <div className="pixel-font text-4xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-pink-500 to-yellow-400 animate-pulse">
                     {currentSlideData.title}
                   </div>
-                  <div className="text-2xl md:text-4xl text-cyan-300 pixel-font">
+                  <div className="text-xl md:text-2xl lg:text-3xl text-cyan-300 pixel-font">
                     {currentSlideData.subtitle}
                   </div>
                 </div>
                 <div className="flex justify-center space-x-8">
-                  <div className="text-6xl animate-bounce">🚀</div>
-                  <div className="text-6xl animate-bounce delay-100">⭐</div>
-                  <div className="text-6xl animate-bounce delay-200">👾</div>
+                  <div className="text-4xl md:text-6xl animate-bounce">🚀</div>
+                  <div className="text-4xl md:text-6xl animate-bounce delay-100">⭐</div>
+                  <div className="text-4xl md:text-6xl animate-bounce delay-200">👾</div>
                 </div>
               </div>
             )}
 
             {currentSlideData.type === 'menu' && (
-              <div className="space-y-8">
+              <div className="space-y-6 w-full">
                 <div className="text-center">
-                  <h1 className="pixel-font text-4xl md:text-6xl font-bold text-cyan-400 mb-4">
+                  <h1 className="pixel-font text-3xl md:text-4xl lg:text-5xl font-bold text-cyan-400 mb-4">
                     {currentSlideData.title}
                   </h1>
                 </div>
-                <div className="bg-black bg-opacity-70 border-4 border-cyan-400 p-8 rounded-lg">
-                  <div className="space-y-4">
+                <div className="bg-black bg-opacity-70 border-4 border-cyan-400 p-6 rounded-lg max-h-96 overflow-y-auto">
+                  <div className="space-y-3">
                     {currentSlideData.content?.map((item, index) => (
                       <div
                         key={index}
-                        className="pixel-font text-xl md:text-2xl text-white hover:text-cyan-400 transition-colors cursor-pointer flex items-center space-x-4 p-2 hover:bg-cyan-400 hover:bg-opacity-10 rounded"
+                        className="pixel-font text-lg md:text-xl lg:text-2xl text-white hover:text-cyan-400 transition-colors cursor-pointer flex items-center space-x-4 p-2 hover:bg-cyan-400 hover:bg-opacity-10 rounded"
                         onClick={() => goToSlide(index + 2)}
                       >
-                        <Zap className="text-yellow-400" size={24} />
+                        <Zap className="text-yellow-400 flex-shrink-0" size={20} />
                         <span>{item}</span>
                       </div>
                     ))}
@@ -239,29 +239,29 @@ const RetroSlideshow = () => {
             )}
 
             {currentSlideData.type === 'content' && (
-              <div className="space-y-6">
-                <div className="text-center">
-                  <h1 className="pixel-font text-4xl md:text-6xl font-bold text-cyan-400 mb-2">
+              <div className="space-y-4 w-full h-full flex flex-col">
+                <div className="text-center flex-shrink-0">
+                  <h1 className="pixel-font text-2xl md:text-3xl lg:text-4xl font-bold text-cyan-400 mb-2">
                     {currentSlideData.title}
                   </h1>
-                  <h2 className="pixel-font text-xl md:text-2xl text-pink-400">
+                  <h2 className="pixel-font text-lg md:text-xl lg:text-2xl text-pink-400">
                     {currentSlideData.subtitle}
                   </h2>
                 </div>
-                <div className="bg-black bg-opacity-70 border-4 border-cyan-400 p-8 rounded-lg">
-                  <div className="space-y-3">
+                <div className="bg-black bg-opacity-70 border-4 border-cyan-400 p-4 md:p-6 rounded-lg flex-1 overflow-y-auto">
+                  <div className="space-y-2">
                     {currentSlideData.content?.map((item, index) => (
                       <div
                         key={index}
-                        className={`pixel-font text-lg md:text-xl ${
+                        className={`pixel-font ${
                           item.startsWith('🎉') || item.startsWith('⚠️')
-                            ? 'text-yellow-400 font-bold text-2xl'
+                            ? 'text-yellow-400 font-bold text-lg md:text-xl lg:text-2xl'
                             : item.startsWith('•')
-                            ? 'text-cyan-300 ml-6'
+                            ? 'text-cyan-300 ml-4 md:ml-6 text-sm md:text-base lg:text-lg'
                             : item === ''
                             ? ''
-                            : 'text-white'
-                        } leading-relaxed`}
+                            : 'text-white text-sm md:text-base lg:text-lg'
+                        } leading-relaxed break-words`}
                       >
                         {item}
                       </div>
