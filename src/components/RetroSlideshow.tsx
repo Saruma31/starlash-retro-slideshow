@@ -1,5 +1,7 @@
+
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Star, Zap } from 'lucide-react';
+import { ScrollArea } from './ui/scroll-area';
 
 const RetroSlideshow = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -112,6 +114,47 @@ const RetroSlideshow = () => {
         '',
         '🚀 MISSION ACCOMPLISHED! 🚀'
       ]
+    },
+    {
+      type: 'content',
+      title: 'ZUSÄTZLICHE FEATURES',
+      subtitle: 'Erweiterte Funktionen',
+      content: [
+        '🎨 Platzhalter-Inhalt für weitere Features',
+        '🔮 Zukünftige Entwicklungen geplant',
+        '⭐ Power-Up-Systeme erweitern',
+        '🎵 Mehr Soundeffekte hinzufügen',
+        '🏆 Highscore-System implementieren',
+        '🌌 Neue Level-Designs erstellen'
+      ]
+    },
+    {
+      type: 'content',
+      title: 'TECHNISCHE DETAILS',
+      subtitle: 'Entwicklungsaspekte',
+      content: [
+        '💻 Code-Architektur und Struktur',
+        '🔧 Verwendete Design-Patterns',
+        '📊 Performance-Optimierungen',
+        '🐛 Debugging-Strategien',
+        '📝 Dokumentations-Standards',
+        '🔄 Versionskontrolle mit Git',
+        '🧪 Testing-Methoden'
+      ]
+    },
+    {
+      type: 'content',
+      title: 'ZUKUNFTSPLÄNE',
+      subtitle: 'Nächste Schritte',
+      content: [
+        '🚀 Mobile Version entwickeln',
+        '🌐 Multiplayer-Funktionen hinzufügen',
+        '🎮 VR-Support implementieren',
+        '🏪 Steam-Veröffentlichung planen',
+        '👥 Community-Features einbauen',
+        '📱 Cross-Platform-Kompatibilität',
+        '🎯 E-Sports-Turnier-Modus'
+      ]
     }
   ];
 
@@ -155,19 +198,21 @@ const RetroSlideshow = () => {
             <div className="pixel-font text-cyan-400 text-lg font-bold">
               RETRO GAMING PRESENTATION
             </div>
-            <div className="flex space-x-2">
-              {slides.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => goToSlide(index)}
-                  className={`w-3 h-3 border-2 ${
-                    index === currentSlide
-                      ? 'bg-cyan-400 border-cyan-400'
-                      : 'bg-transparent border-gray-500'
-                  } hover:border-cyan-400 transition-colors`}
-                />
-              ))}
-            </div>
+            <ScrollArea className="max-w-md">
+              <div className="flex space-x-2">
+                {slides.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => goToSlide(index)}
+                    className={`w-3 h-3 border-2 flex-shrink-0 ${
+                      index === currentSlide
+                        ? 'bg-cyan-400 border-cyan-400'
+                        : 'bg-transparent border-gray-500'
+                    } hover:border-cyan-400 transition-colors`}
+                  />
+                ))}
+              </div>
+            </ScrollArea>
           </div>
         </div>
 
@@ -215,25 +260,27 @@ const RetroSlideshow = () => {
             )}
 
             {currentSlideData.type === 'menu' && (
-              <div className="space-y-6 w-full">
-                <div className="text-center">
+              <div className="space-y-6 w-full h-full flex flex-col">
+                <div className="text-center flex-shrink-0">
                   <h1 className="pixel-font text-3xl md:text-4xl lg:text-5xl font-bold text-cyan-400 mb-4">
                     {currentSlideData.title}
                   </h1>
                 </div>
-                <div className="bg-black bg-opacity-70 border-4 border-cyan-400 p-6 rounded-lg max-h-96 overflow-y-auto">
-                  <div className="space-y-3">
-                    {currentSlideData.content?.map((item, index) => (
-                      <div
-                        key={index}
-                        className="pixel-font text-lg md:text-xl lg:text-2xl text-white hover:text-cyan-400 transition-colors cursor-pointer flex items-center space-x-4 p-2 hover:bg-cyan-400 hover:bg-opacity-10 rounded"
-                        onClick={() => goToSlide(index + 2)}
-                      >
-                        <Zap className="text-yellow-400 flex-shrink-0" size={20} />
-                        <span>{item}</span>
-                      </div>
-                    ))}
-                  </div>
+                <div className="bg-black bg-opacity-70 border-4 border-cyan-400 p-6 rounded-lg flex-1">
+                  <ScrollArea className="h-full">
+                    <div className="space-y-3">
+                      {currentSlideData.content?.map((item, index) => (
+                        <div
+                          key={index}
+                          className="pixel-font text-lg md:text-xl lg:text-2xl text-white hover:text-cyan-400 transition-colors cursor-pointer flex items-center space-x-4 p-2 hover:bg-cyan-400 hover:bg-opacity-10 rounded"
+                          onClick={() => goToSlide(index + 2)}
+                        >
+                          <Zap className="text-yellow-400 flex-shrink-0" size={20} />
+                          <span>{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </ScrollArea>
                 </div>
               </div>
             )}
@@ -248,25 +295,27 @@ const RetroSlideshow = () => {
                     {currentSlideData.subtitle}
                   </h2>
                 </div>
-                <div className="bg-black bg-opacity-70 border-4 border-cyan-400 p-4 md:p-6 rounded-lg flex-1 overflow-y-auto">
-                  <div className="space-y-2">
-                    {currentSlideData.content?.map((item, index) => (
-                      <div
-                        key={index}
-                        className={`pixel-font ${
-                          item.startsWith('🎉') || item.startsWith('⚠️')
-                            ? 'text-yellow-400 font-bold text-lg md:text-xl lg:text-2xl'
-                            : item.startsWith('•')
-                            ? 'text-cyan-300 ml-4 md:ml-6 text-sm md:text-base lg:text-lg'
-                            : item === ''
-                            ? ''
-                            : 'text-white text-sm md:text-base lg:text-lg'
-                        } leading-relaxed break-words`}
-                      >
-                        {item}
-                      </div>
-                    ))}
-                  </div>
+                <div className="bg-black bg-opacity-70 border-4 border-cyan-400 p-4 md:p-6 rounded-lg flex-1">
+                  <ScrollArea className="h-full">
+                    <div className="space-y-2 pr-4">
+                      {currentSlideData.content?.map((item, index) => (
+                        <div
+                          key={index}
+                          className={`pixel-font ${
+                            item.startsWith('🎉') || item.startsWith('⚠️')
+                              ? 'text-yellow-400 font-bold text-lg md:text-xl lg:text-2xl'
+                              : item.startsWith('•')
+                              ? 'text-cyan-300 ml-4 md:ml-6 text-sm md:text-base lg:text-lg'
+                              : item === ''
+                              ? 'h-2'
+                              : 'text-white text-sm md:text-base lg:text-lg'
+                          } leading-relaxed break-words`}
+                        >
+                          {item}
+                        </div>
+                      ))}
+                    </div>
+                  </ScrollArea>
                 </div>
               </div>
             )}
