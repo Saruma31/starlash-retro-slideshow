@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Star, Zap } from 'lucide-react';
 
@@ -172,9 +171,31 @@ const RetroSlideshow = () => {
           </div>
         </div>
 
-        {/* Main content area */}
-        <div className="flex-1 flex items-center justify-center p-8">
-          <div className="max-w-4xl w-full">
+        {/* Main content area with integrated navigation */}
+        <div className="flex-1 flex items-center justify-center p-8 relative">
+          {/* Left Navigation Button */}
+          <button
+            onClick={prevSlide}
+            disabled={currentSlide === 0}
+            className={`absolute left-4 top-1/2 transform -translate-y-1/2 z-20 pixel-font bg-purple-600 hover:bg-purple-500 text-white px-4 py-3 border-2 border-cyan-400 transition-all duration-200 ${
+              currentSlide === 0 ? 'opacity-30 cursor-not-allowed' : 'hover:border-yellow-400 hover:shadow-lg glow-animation'
+            }`}
+          >
+            <ChevronLeft size={24} />
+          </button>
+
+          {/* Right Navigation Button */}
+          <button
+            onClick={nextSlide}
+            disabled={currentSlide === slides.length - 1}
+            className={`absolute right-4 top-1/2 transform -translate-y-1/2 z-20 pixel-font bg-purple-600 hover:bg-purple-500 text-white px-4 py-3 border-2 border-cyan-400 transition-all duration-200 ${
+              currentSlide === slides.length - 1 ? 'opacity-30 cursor-not-allowed' : 'hover:border-yellow-400 hover:shadow-lg glow-animation'
+            }`}
+          >
+            <ChevronRight size={24} />
+          </button>
+
+          <div className="max-w-4xl w-full mx-8">
             {currentSlideData.type === 'title' && (
               <div className="text-center space-y-8">
                 <div className="space-y-4">
@@ -252,7 +273,7 @@ const RetroSlideshow = () => {
           </div>
         </div>
 
-        {/* Navigation */}
+        {/* Bottom Navigation */}
         <div className="bg-black bg-opacity-50 border-t-4 border-cyan-400 p-4">
           <div className="flex justify-between items-center">
             <button
