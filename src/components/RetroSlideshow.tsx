@@ -284,9 +284,9 @@ const RetroSlideshow = () => {
               </div>
             )}
           </div>
-         </div>
         </div>
-      </div>
+
+       
 
       <div className="absolute top-20 right-10 text-4xl animate-bounce">
         🛸
