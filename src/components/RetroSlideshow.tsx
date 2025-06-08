@@ -171,7 +171,7 @@ const RetroSlideshow = () => {
         <div
           key={star.id}
           className="absolute animate-pulse"
-          style={{ left: ${star.x}%, top: ${star.y}%, width: ${star.size}px, height: ${star.size}px }}
+          style={{ left: `${star.x}%`, top: `${star.y}%`, width: `${star.size}px`, height: `${star.size}px` }}
         >
           <Star className="text-white opacity-70" size={star.size} />
         </div>
@@ -181,7 +181,7 @@ const RetroSlideshow = () => {
         <div className="bg-black bg-opacity-50 border-b-4 border-cyan-400 p-4">
           <div className="flex justify-between items-center">
             <div className="pixel-font text-cyan-400 text-lg font-bold">
-              PRÄSENTATION STARLASH
+              RETRO GAMING PRESENTATION
             </div>
             <ScrollArea className="max-w-md">
               <div className="flex space-x-2">
@@ -189,7 +189,7 @@ const RetroSlideshow = () => {
                   <button
                     key={index}
                     onClick={() => goToSlide(index)}
-                    className={w-3 h-3 border-2 flex-shrink-0 ${index === currentSlide ? 'bg-cyan-400 border-cyan-400' : 'bg-transparent border-gray-500'} hover:border-cyan-400 transition-colors}
+                    className={`w-3 h-3 border-2 flex-shrink-0 ${index === currentSlide ? 'bg-cyan-400 border-cyan-400' : 'bg-transparent border-gray-500'} hover:border-cyan-400 transition-colors`}
                   />
                 ))}
               </div>
@@ -198,11 +198,11 @@ const RetroSlideshow = () => {
         </div>
 
         <div className="flex-1 flex items-center justify-center p-4 relative">
-          <button onClick={prevSlide} disabled={currentSlide === 0} className={absolute left-4 top-1/2 transform -translate-y-1/2 z-20 pixel-font bg-purple-600 hover:bg-purple-500 text-white px-4 py-3 border-2 border-cyan-400 transition-all duration-200 ${currentSlide === 0 ? 'opacity-30 cursor-not-allowed' : 'hover:border-yellow-400 hover:shadow-lg glow-animation'}}>
+          <button onClick={prevSlide} disabled={currentSlide === 0} className={`absolute left-4 top-1/2 transform -translate-y-1/2 z-20 pixel-font bg-purple-600 hover:bg-purple-500 text-white px-4 py-3 border-2 border-cyan-400 transition-all duration-200 ${currentSlide === 0 ? 'opacity-30 cursor-not-allowed' : 'hover:border-yellow-400 hover:shadow-lg glow-animation'}`}>
             <ChevronLeft size={24} />
           </button>
 
-          <button onClick={nextSlide} disabled={currentSlide === slides.length - 1} className={absolute right-4 top-1/2 transform -translate-y-1/2 z-20 pixel-font bg-purple-600 hover:bg-purple-500 text-white px-4 py-3 border-2 border-cyan-400 transition-all duration-200 ${currentSlide === slides.length - 1 ? 'opacity-30 cursor-not-allowed' : 'hover:border-yellow-400 hover:shadow-lg glow-animation'}}>
+          <button onClick={nextSlide} disabled={currentSlide === slides.length - 1} className={`absolute right-4 top-1/2 transform -translate-y-1/2 z-20 pixel-font bg-purple-600 hover:bg-purple-500 text-white px-4 py-3 border-2 border-cyan-400 transition-all duration-200 ${currentSlide === slides.length - 1 ? 'opacity-30 cursor-not-allowed' : 'hover:border-yellow-400 hover:shadow-lg glow-animation'}`}>
             <ChevronRight size={24} />
           </button>
 
@@ -268,7 +268,7 @@ const RetroSlideshow = () => {
                         {currentSlideData.content?.map((item, index) => (
                           <div
                             key={index}
-                            className={pixel-font ${item.startsWith('🎉') || item.startsWith('⚠️') ? 'text-yellow-400 font-bold text-lg md:text-xl lg:text-2xl' : item.startsWith('•') ? 'text-cyan-300 ml-4 md:ml-6 text-sm md:text-base lg:text-lg' : item === '' ? 'h-2' : 'text-white text-sm md:text-base lg:text-lg'} leading-relaxed break-words}
+                            className={`pixel-font ${item.startsWith('🎉') || item.startsWith('⚠️') ? 'text-yellow-400 font-bold text-lg md:text-xl lg:text-2xl' : item.startsWith('•') ? 'text-cyan-300 ml-4 md:ml-6 text-sm md:text-base lg:text-lg' : item === '' ? 'h-2' : 'text-white text-sm md:text-base lg:text-lg'} leading-relaxed break-words`}
                           >
                             {item}
                           </div>
