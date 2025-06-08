@@ -181,7 +181,7 @@ const RetroSlideshow = () => {
         <div className="bg-black bg-opacity-50 border-b-4 border-cyan-400 p-4">
           <div className="flex justify-between items-center">
             <div className="pixel-font text-cyan-400 text-lg font-bold">
-              RETRO GAMING PRESENTATION
+              PRÄSENTATION STARLASH
             </div>
             <ScrollArea className="max-w-md">
               <div className="flex space-x-2">
@@ -283,22 +283,6 @@ const RetroSlideshow = () => {
                 </div>
               </div>
             )}
-          </div>
-        </div>
-
-        <div className="bg-black bg-opacity-50 border-t-4 border-cyan-400 p-4">
-          <div className="flex justify-between items-center">
-            <button onClick={prevSlide} className="pixel-font bg-purple-600 hover:bg-purple-500 text-white px-6 py-3 border-2 border-white hover:border-cyan-400 transition-all flex items-center space-x-2" disabled={currentSlide === 0}>
-              <ChevronLeft size={20} />
-              <span>ZURÜCK</span>
-            </button>
-            <div className="pixel-font text-cyan-400 text-lg">
-              {currentSlide + 1} / {slides.length}
-            </div>
-            <button onClick={nextSlide} className="pixel-font bg-purple-600 hover:bg-purple-500 text-white px-6 py-3 border-2 border-white hover:border-cyan-400 transition-all flex items-center space-x-2" disabled={currentSlide === slides.length - 1}>
-              <span>WEITER</span>
-              <ChevronRight size={20} />
-            </button>
           </div>
         </div>
       </div>
