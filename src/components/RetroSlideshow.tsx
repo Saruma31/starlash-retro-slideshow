@@ -4,7 +4,7 @@ import { ScrollArea } from './ui/scroll-area';
 
 const RetroSlideshow = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [stars, setStars] = useState<Array<{ id: number; x: number; y: number; size: number }>>([]);
+  const [stars, setStars] = useState<Array<{id: number, x: number, y: number, size: number}>>([]);
 
   useEffect(() => {
     const generateStars = () => {
@@ -14,7 +14,7 @@ const RetroSlideshow = () => {
           id: i,
           x: Math.random() * 100,
           y: Math.random() * 100,
-          size: Math.random() * 3 + 1,
+          size: Math.random() * 3 + 1
         });
       }
       setStars(newStars);
@@ -27,7 +27,7 @@ const RetroSlideshow = () => {
       type: 'title',
       title: 'STARLASH',
       subtitle: 'Ein selbst programmiertes Videospiel',
-      content: null,
+      content: null
     },
     {
       type: 'menu',
@@ -41,8 +41,8 @@ const RetroSlideshow = () => {
         '5. Fazit',
         '6. Zusätzliche Features',
         '7. Technische Details',
-        '8. Zukunftspläne',
-      ],
+        '8. Zukunftspläne'
+      ]
     },
     {
       type: 'content',
@@ -54,8 +54,8 @@ const RetroSlideshow = () => {
         '🎮 Spieler steuert ein Raumschiff, weicht Asteroiden aus und schießt sie ab',
         '🌟 Features: Lebenssystem, Punktesystem, Power-Ups, verschiedene Asteroiden',
         '🎨 Eigenes Design: Hintergrund, Raumschiff, Laser etc.',
-        '✅ Spiel läuft stabil und ohne Fehler',
-      ],
+        '✅ Spiel läuft stabil und ohne Fehler'
+      ]
     },
     {
       type: 'content',
@@ -69,8 +69,8 @@ const RetroSlideshow = () => {
         '📱 Menüs eingebaut: Start, Pause, Game Over',
         '🔄 Feedback gesammelt → neue Features eingebaut',
         '🛠️ Fehlerbehebung, Design angepasst, Soundeffekte ergänzt',
-        '📋 Dokumentation und Präsentation vorbereitet',
-      ],
+        '📋 Dokumentation und Präsentation vorbereitet'
+      ]
     },
     {
       type: 'content',
@@ -86,8 +86,8 @@ const RetroSlideshow = () => {
         '⚠️ SCHWIERIGKEITEN:',
         '• Schuss-Cooldown korrekt umsetzen',
         '• Kombination von Spiellogik und UI',
-        '• Phasenweise Motivationsprobleme',
-      ],
+        '• Phasenweise Motivationsprobleme'
+      ]
     },
     {
       type: 'content',
@@ -99,8 +99,8 @@ const RetroSlideshow = () => {
         '🖥️ UI-Integration mit Spiellogik verbunden',
         '💪 Motivationsprobleme durch Feedback überwunden',
         '📈 Kontinuierliche Verbesserung durch Rückmeldungen',
-        '🎮 Tieferes Verständnis für Spielmechaniken entwickelt',
-      ],
+        '🎮 Tieferes Verständnis für Spielmechaniken entwickelt'
+      ]
     },
     {
       type: 'content',
@@ -113,8 +113,8 @@ const RetroSlideshow = () => {
         '📚 Gelernt: Umgang mit Unity, Spielmechaniken, Fehlerbehebung',
         '🔄 Rückmeldungen aktiv genutzt zur Verbesserung',
         '',
-        '🚀 MISSION ACCOMPLISHED! 🚀',
-      ],
+        '🚀 MISSION ACCOMPLISHED! 🚀'
+      ]
     },
     {
       type: 'content',
@@ -126,8 +126,8 @@ const RetroSlideshow = () => {
         '⭐ Power-Up-Systeme erweitern',
         '🎵 Mehr Soundeffekte hinzufügen',
         '🏆 Highscore-System implementieren',
-        '🌌 Neue Level-Designs erstellen',
-      ],
+        '🌌 Neue Level-Designs erstellen'
+      ]
     },
     {
       type: 'content',
@@ -140,8 +140,8 @@ const RetroSlideshow = () => {
         '🐛 Debugging-Strategien',
         '📝 Dokumentations-Standards',
         '🔄 Versionskontrolle mit Git',
-        '🧪 Testing-Methoden',
-      ],
+        '🧪 Testing-Methoden'
+      ]
     },
     {
       type: 'content',
@@ -154,14 +154,15 @@ const RetroSlideshow = () => {
         '🏪 Steam-Veröffentlichung planen',
         '👥 Community-Features einbauen',
         '📱 Cross-Platform-Kompatibilität',
-        '🎯 E-Sports-Turnier-Modus',
-      ],
-    },
+        '🎯 E-Sports-Turnier-Modus'
+      ]
+    }
   ];
 
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   const goToSlide = (index: number) => setCurrentSlide(index);
+
   const currentSlideData = slides[currentSlide];
 
   return (
@@ -170,12 +171,7 @@ const RetroSlideshow = () => {
         <div
           key={star.id}
           className="absolute animate-pulse"
-          style={{
-            left: `${star.x}%`,
-            top: `${star.y}%`,
-            width: `${star.size}px`,
-            height: `${star.size}px`,
-          }}
+          style={{ left: `${star.x}%`, top: `${star.y}%`, width: `${star.size}px`, height: `${star.size}px` }}
         >
           <Star className="text-white opacity-70" size={star.size} />
         </div>
@@ -184,18 +180,16 @@ const RetroSlideshow = () => {
       <div className="relative z-10 h-full flex flex-col">
         <div className="bg-black bg-opacity-50 border-b-4 border-cyan-400 p-4">
           <div className="flex justify-between items-center">
-            <div className="pixel-font text-cyan-400 text-lg font-bold">RETRO GAMING PRESENTATION</div>
+            <div className="pixel-font text-cyan-400 text-lg font-bold">
+              RETRO GAMING PRESENTATION
+            </div>
             <ScrollArea className="max-w-md">
               <div className="flex space-x-2">
                 {slides.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => goToSlide(index)}
-                    className={`w-3 h-3 border-2 flex-shrink-0 ${
-                      index === currentSlide
-                        ? 'bg-cyan-400 border-cyan-400'
-                        : 'bg-transparent border-gray-500'
-                    } hover:border-cyan-400 transition-colors`}
+                    className={`w-3 h-3 border-2 flex-shrink-0 ${index === currentSlide ? 'bg-cyan-400 border-cyan-400' : 'bg-transparent border-gray-500'} hover:border-cyan-400 transition-colors`}
                   />
                 ))}
               </div>
@@ -204,23 +198,11 @@ const RetroSlideshow = () => {
         </div>
 
         <div className="flex-1 flex items-center justify-center p-4 relative">
-          <button
-            onClick={prevSlide}
-            disabled={currentSlide === 0}
-            className={`absolute left-4 top-1/2 transform -translate-y-1/2 z-20 pixel-font bg-purple-600 hover:bg-purple-500 text-white px-4 py-3 border-2 border-cyan-400 transition-all duration-200 ${
-              currentSlide === 0 ? 'opacity-30 cursor-not-allowed' : 'hover:border-yellow-400 hover:shadow-lg glow-animation'
-            }`}
-          >
+          <button onClick={prevSlide} disabled={currentSlide === 0} className={`absolute left-4 top-1/2 transform -translate-y-1/2 z-20 pixel-font bg-purple-600 hover:bg-purple-500 text-white px-4 py-3 border-2 border-cyan-400 transition-all duration-200 ${currentSlide === 0 ? 'opacity-30 cursor-not-allowed' : 'hover:border-yellow-400 hover:shadow-lg glow-animation'}`}>
             <ChevronLeft size={24} />
           </button>
 
-          <button
-            onClick={nextSlide}
-            disabled={currentSlide === slides.length - 1}
-            className={`absolute right-4 top-1/2 transform -translate-y-1/2 z-20 pixel-font bg-purple-600 hover:bg-purple-500 text-white px-4 py-3 border-2 border-cyan-400 transition-all duration-200 ${
-              currentSlide === slides.length - 1 ? 'opacity-30 cursor-not-allowed' : 'hover:border-yellow-400 hover:shadow-lg glow-animation'
-            }`}
-          >
+          <button onClick={nextSlide} disabled={currentSlide === slides.length - 1} className={`absolute right-4 top-1/2 transform -translate-y-1/2 z-20 pixel-font bg-purple-600 hover:bg-purple-500 text-white px-4 py-3 border-2 border-cyan-400 transition-all duration-200 ${currentSlide === slides.length - 1 ? 'opacity-30 cursor-not-allowed' : 'hover:border-yellow-400 hover:shadow-lg glow-animation'}`}>
             <ChevronRight size={24} />
           </button>
 
@@ -279,49 +261,54 @@ const RetroSlideshow = () => {
                     {currentSlideData.subtitle}
                   </h2>
                 </div>
-                <div className="bg-black bg-opacity-70 border-4 border-cyan-400 p-4 md:p-6 rounded-lg flex-1">
-                  <ScrollArea className="h-full">
-                    <div className="space-y-2 pr-4">
-                      {currentSlideData.content?.map((item, index) => (
-                        <div
-                          key={index}
-                          className={`pixel-font ${
-                            item.startsWith('🎉') || item.startsWith('⚠️')
-                              ? 'text-yellow-400 font-bold text-lg md:text-xl lg:text-2xl'
-                              : item.startsWith('•')
-                              ? 'text-cyan-300 ml-4 md:ml-6 text-sm md:text-base lg:text-lg'
-                              : item === ''
-                              ? 'h-2'
-                              : 'text-white text-sm md:text-base lg:text-lg'
-                          } leading-relaxed break-words`}
-                        >
-                          {item}
-                        </div>
-                      ))}
-                      <div className="flex justify-around mt-6">
-                        <img
-                          src="https://via.placeholder.com/150"
-                          alt="Bild 1"
-                          className="rounded-lg border-2 border-cyan-400 w-1/3 max-w-[200px]"
-                        />
-                        <img
-                          src="https://via.placeholder.com/150"
-                          alt="Bild 2"
-                          className="rounded-lg border-2 border-cyan-400 w-1/3 max-w-[200px]"
-                        />
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-start flex-1">
+                  <div className="col-span-2 bg-black bg-opacity-70 border-4 border-cyan-400 p-4 md:p-6 rounded-lg h-full">
+                    <ScrollArea className="h-full">
+                      <div className="space-y-2 pr-4">
+                        {currentSlideData.content?.map((item, index) => (
+                          <div
+                            key={index}
+                            className={`pixel-font ${item.startsWith('🎉') || item.startsWith('⚠️') ? 'text-yellow-400 font-bold text-lg md:text-xl lg:text-2xl' : item.startsWith('•') ? 'text-cyan-300 ml-4 md:ml-6 text-sm md:text-base lg:text-lg' : item === '' ? 'h-2' : 'text-white text-sm md:text-base lg:text-lg'} leading-relaxed break-words`}
+                          >
+                            {item}
+                          </div>
+                        ))}
                       </div>
-                    </div>
-                  </ScrollArea>
+                    </ScrollArea>
+                  </div>
+                  <div className="flex flex-col gap-4">
+                    <div className="w-full aspect-video bg-cyan-950 border-2 border-cyan-400 rounded-lg flex items-center justify-center text-cyan-300">Bild 1</div>
+                    <div className="w-full aspect-video bg-cyan-950 border-2 border-cyan-400 rounded-lg flex items-center justify-center text-cyan-300">Bild 2</div>
+                  </div>
                 </div>
               </div>
             )}
           </div>
         </div>
+
+        <div className="bg-black bg-opacity-50 border-t-4 border-cyan-400 p-4">
+          <div className="flex justify-between items-center">
+            <button onClick={prevSlide} className="pixel-font bg-purple-600 hover:bg-purple-500 text-white px-6 py-3 border-2 border-white hover:border-cyan-400 transition-all flex items-center space-x-2" disabled={currentSlide === 0}>
+              <ChevronLeft size={20} />
+              <span>ZURÜCK</span>
+            </button>
+            <div className="pixel-font text-cyan-400 text-lg">
+              {currentSlide + 1} / {slides.length}
+            </div>
+            <button onClick={nextSlide} className="pixel-font bg-purple-600 hover:bg-purple-500 text-white px-6 py-3 border-2 border-white hover:border-cyan-400 transition-all flex items-center space-x-2" disabled={currentSlide === slides.length - 1}>
+              <span>WEITER</span>
+              <ChevronRight size={20} />
+            </button>
+          </div>
+        </div>
       </div>
 
-      {/* Deko */}
-      <div className="absolute top-20 right-10 text-4xl animate-bounce">🛸</div>
-      <div className="absolute bottom-20 left-10 text-3xl animate-pulse">🌟</div>
+      <div className="absolute top-20 right-10 text-4xl animate-bounce">
+        🛸
+      </div>
+      <div className="absolute bottom-20 left-10 text-3xl animate-pulse">
+        🌟
+      </div>
     </div>
   );
 };
