@@ -100,7 +100,7 @@ const RetroSlideshow = () => {
     },
     {
       type: 'content',
-      title: 'REFLEXION',
+      title: 'REFLEXION DER ZIELE',
       subtitle: 'Erkenntnisse und Lernerfahrungen',
       content: [
         '🎯 Technische Herausforderungen gemeistert',
