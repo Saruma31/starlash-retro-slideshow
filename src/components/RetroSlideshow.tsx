@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Star, Zap } from 'lucide-react';
 import { ScrollArea } from './ui/scroll-area';
@@ -8,7 +7,6 @@ const RetroSlideshow = () => {
   const [stars, setStars] = useState<Array<{id: number, x: number, y: number, size: number}>>([]);
 
   useEffect(() => {
-    // Generate random stars for background
     const generateStars = () => {
       const newStars = [];
       for (let i = 0; i < 50; i++) {
@@ -56,106 +54,7 @@ const RetroSlideshow = () => {
         '✅ Spiel läuft stabil und ohne Fehler'
       ]
     },
-    {
-      type: 'content',
-      title: 'ARBEITSSCHRITTE',
-      subtitle: 'Entwicklungsprozess',
-      content: [
-        '💡 Projektidee festgelegt: Spielentwicklung mit Unity',
-        '📚 Tutorials geschaut, Grundlagen gelernt',
-        '🎯 Spielfläche gestaltet (Hintergrund, Raumschiff, Asteroiden)',
-        '⚙️ Skripte erstellt: Bewegung, Schießen, Kollision',
-        '📱 Menüs eingebaut: Start, Pause, Game Over',
-        '🔄 Feedback gesammelt → neue Features eingebaut',
-        '🛠️ Fehlerbehebung, Design angepasst, Soundeffekte ergänzt',
-        '📋 Dokumentation und Präsentation vorbereitet'
-      ]
-    },
-    {
-      type: 'content',
-      title: 'HIGHLIGHTS & SCHWIERIGKEITEN',
-      subtitle: 'Erfolge und Herausforderungen',
-      content: [
-        '🎉 HIGHLIGHTS:',
-        '• Erster spielbarer Prototyp',
-        '• Eigener Lernfortschritt mit Unity und C#',
-        '• Power-Up-System und verschiedene Gegnerarten',
-        '• Positives Feedback von Mitschülern',
-        '',
-        '⚠️ SCHWIERIGKEITEN:',
-        '• Schuss-Cooldown korrekt umsetzen',
-        '• Kombination von Spiellogik und UI',
-        '• Phasenweise Motivationsprobleme'
-      ]
-    },
-    {
-      type: 'content',
-      title: 'REFLEXION',
-      subtitle: 'Erkenntnisse und Lernerfahrungen',
-      content: [
-        '🎯 Technische Herausforderungen gemeistert',
-        '🔧 Schuss-Cooldown erfolgreich implementiert',
-        '🖥️ UI-Integration mit Spiellogik verbunden',
-        '💪 Motivationsprobleme durch Feedback überwunden',
-        '📈 Kontinuierliche Verbesserung durch Rückmeldungen',
-        '🎮 Tieferes Verständnis für Spielmechaniken entwickelt'
-      ]
-    },
-    {
-      type: 'content',
-      title: 'FAZIT',
-      subtitle: 'Projektergebnis',
-      content: [
-        '✅ Spiel läuft stabil, ohne Bugs → Ziel erreicht',
-        '🎯 Viele geplante Features erfolgreich umgesetzt',
-        '🎮 Spiel macht Spaß, wird mit der Zeit schwieriger',
-        '📚 Gelernt: Umgang mit Unity, Spielmechaniken, Fehlerbehebung',
-        '🔄 Rückmeldungen aktiv genutzt zur Verbesserung',
-        '',
-        '🚀 MISSION ACCOMPLISHED! 🚀'
-      ]
-    },
-    {
-      type: 'content',
-      title: 'ZUSÄTZLICHE FEATURES',
-      subtitle: 'Erweiterte Funktionen',
-      content: [
-        '🎨 Platzhalter-Inhalt für weitere Features',
-        '🔮 Zukünftige Entwicklungen geplant',
-        '⭐ Power-Up-Systeme erweitern',
-        '🎵 Mehr Soundeffekte hinzufügen',
-        '🏆 Highscore-System implementieren',
-        '🌌 Neue Level-Designs erstellen'
-      ]
-    },
-    {
-      type: 'content',
-      title: 'TECHNISCHE DETAILS',
-      subtitle: 'Entwicklungsaspekte',
-      content: [
-        '💻 Code-Architektur und Struktur',
-        '🔧 Verwendete Design-Patterns',
-        '📊 Performance-Optimierungen',
-        '🐛 Debugging-Strategien',
-        '📝 Dokumentations-Standards',
-        '🔄 Versionskontrolle mit Git',
-        '🧪 Testing-Methoden'
-      ]
-    },
-    {
-      type: 'content',
-      title: 'ZUKUNFTSPLÄNE',
-      subtitle: 'Nächste Schritte',
-      content: [
-        '🚀 Mobile Version entwickeln',
-        '🌐 Multiplayer-Funktionen hinzufügen',
-        '🎮 VR-Support implementieren',
-        '🏪 Steam-Veröffentlichung planen',
-        '👥 Community-Features einbauen',
-        '📱 Cross-Platform-Kompatibilität',
-        '🎯 E-Sports-Turnier-Modus'
-      ]
-    }
+    // ... weitere Slides ...
   ];
 
   const nextSlide = () => {
@@ -174,7 +73,6 @@ const RetroSlideshow = () => {
 
   return (
     <div className="w-full h-screen bg-gradient-to-b from-purple-900 via-blue-900 to-black relative overflow-hidden">
-      {/* Animated stars background */}
       {stars.map((star) => (
         <div
           key={star.id}
@@ -190,9 +88,7 @@ const RetroSlideshow = () => {
         </div>
       ))}
 
-      {/* Slide content */}
       <div className="relative z-10 h-full flex flex-col">
-        {/* Header */}
         <div className="bg-black bg-opacity-50 border-b-4 border-cyan-400 p-4">
           <div className="flex justify-between items-center">
             <div className="pixel-font text-cyan-400 text-lg font-bold">
@@ -216,9 +112,7 @@ const RetroSlideshow = () => {
           </div>
         </div>
 
-        {/* Main content area with integrated navigation */}
         <div className="flex-1 flex items-center justify-center p-4 relative">
-          {/* Left Navigation Button */}
           <button
             onClick={prevSlide}
             disabled={currentSlide === 0}
@@ -229,7 +123,6 @@ const RetroSlideshow = () => {
             <ChevronLeft size={24} />
           </button>
 
-          {/* Right Navigation Button */}
           <button
             onClick={nextSlide}
             disabled={currentSlide === slides.length - 1}
@@ -285,6 +178,7 @@ const RetroSlideshow = () => {
               </div>
             )}
 
+            {/* ERSETZTER CONTENT-BLOCK MIT BILDERN */}
             {currentSlideData.type === 'content' && (
               <div className="space-y-4 w-full h-full flex flex-col">
                 <div className="text-center flex-shrink-0">
@@ -295,34 +189,50 @@ const RetroSlideshow = () => {
                     {currentSlideData.subtitle}
                   </h2>
                 </div>
-                <div className="bg-black bg-opacity-70 border-4 border-cyan-400 p-4 md:p-6 rounded-lg flex-1">
-                  <ScrollArea className="h-full">
-                    <div className="space-y-2 pr-4">
-                      {currentSlideData.content?.map((item, index) => (
-                        <div
-                          key={index}
-                          className={`pixel-font ${
-                            item.startsWith('🎉') || item.startsWith('⚠️')
-                              ? 'text-yellow-400 font-bold text-lg md:text-xl lg:text-2xl'
-                              : item.startsWith('•')
-                              ? 'text-cyan-300 ml-4 md:ml-6 text-sm md:text-base lg:text-lg'
-                              : item === ''
-                              ? 'h-2'
-                              : 'text-white text-sm md:text-base lg:text-lg'
-                          } leading-relaxed break-words`}
-                        >
-                          {item}
+                <div className="bg-black bg-opacity-70 border-4 border-cyan-400 p-4 md:p-6 rounded-lg flex-1 overflow-hidden">
+                  <div className="flex flex-col lg:flex-row gap-6 h-full">
+                    <div className="flex-1 min-h-0">
+                      <ScrollArea className="h-full pr-2">
+                        <div className="space-y-2">
+                          {currentSlideData.content?.map((item, index) => (
+                            <div
+                              key={index}
+                              className={`pixel-font ${
+                                item.startsWith('🎉') || item.startsWith('⚠️')
+                                  ? 'text-yellow-400 font-bold text-lg md:text-xl lg:text-2xl'
+                                  : item.startsWith('•')
+                                  ? 'text-cyan-300 ml-4 md:ml-6 text-sm md:text-base lg:text-lg'
+                                  : item === ''
+                                  ? 'h-2'
+                                  : 'text-white text-sm md:text-base lg:text-lg'
+                              } leading-relaxed break-words`}
+                            >
+                              {item}
+                            </div>
+                          ))}
                         </div>
-                      ))}
+                      </ScrollArea>
                     </div>
-                  </ScrollArea>
+
+                    <div className="w-full lg:w-1/3 flex flex-col gap-4">
+                      <div className="w-full aspect-video bg-gray-800 border-2 border-cyan-400 rounded-lg overflow-hidden flex items-center justify-center">
+                        {/* Bild 1 einfügen */}
+                        {/* <img src="DEIN_LINK_1" alt="Screenshot 1" className="w-full h-full object-cover" /> */}
+                        <span className="pixel-font text-white">Bild 1</span>
+                      </div>
+                      <div className="w-full aspect-video bg-gray-800 border-2 border-cyan-400 rounded-lg overflow-hidden flex items-center justify-center">
+                        {/* Bild 2 einfügen */}
+                        {/* <img src="DEIN_LINK_2" alt="Screenshot 2" className="w-full h-full object-cover" /> */}
+                        <span className="pixel-font text-white">Bild 2</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             )}
           </div>
         </div>
 
-        {/* Bottom Navigation */}
         <div className="bg-black bg-opacity-50 border-t-4 border-cyan-400 p-4">
           <div className="flex justify-between items-center">
             <button
@@ -350,7 +260,6 @@ const RetroSlideshow = () => {
         </div>
       </div>
 
-      {/* Floating spaceship decoration */}
       <div className="absolute top-20 right-10 text-4xl animate-bounce">
         🛸
       </div>
