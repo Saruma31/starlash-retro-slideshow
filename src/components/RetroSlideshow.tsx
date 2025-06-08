@@ -1,10 +1,11 @@
+// RetroSlideshow.tsx
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Star, Zap } from 'lucide-react';
 import { ScrollArea } from './ui/scroll-area';
 
 const RetroSlideshow = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [stars, setStars] = useState<Array<{id: number, x: number, y: number, size: number}>>([]);
+  const [stars, setStars] = useState<Array<{ id: number, x: number, y: number, size: number }>>([]);
 
   useEffect(() => {
     const generateStars = () => {
@@ -27,7 +28,8 @@ const RetroSlideshow = () => {
       type: 'title',
       title: 'STARLASH',
       subtitle: 'Ein selbst programmiertes Videospiel',
-      content: null
+      content: null,
+      images: []
     },
     {
       type: 'menu',
@@ -42,7 +44,8 @@ const RetroSlideshow = () => {
         '6. Zusätzliche Features',
         '7. Technische Details',
         '8. Zukunftspläne'
-      ]
+      ],
+      images: []
     },
     {
       type: 'content',
@@ -55,6 +58,10 @@ const RetroSlideshow = () => {
         '🌟 Features: Lebenssystem, Punktesystem, Power-Ups, verschiedene Asteroiden',
         '🎨 Eigenes Design: Hintergrund, Raumschiff, Laser etc.',
         '✅ Spiel läuft stabil und ohne Fehler'
+      ],
+      images: [
+        'https://placekitten.com/400/225',
+        'https://placekitten.com/401/225'
       ]
     },
     {
@@ -70,7 +77,8 @@ const RetroSlideshow = () => {
         '🔄 Feedback gesammelt → neue Features eingebaut',
         '🛠️ Fehlerbehebung, Design angepasst, Soundeffekte ergänzt',
         '📋 Dokumentation und Präsentation vorbereitet'
-      ]
+      ],
+      images: []
     },
     {
       type: 'content',
@@ -87,7 +95,8 @@ const RetroSlideshow = () => {
         '• Schuss-Cooldown korrekt umsetzen',
         '• Kombination von Spiellogik und UI',
         '• Phasenweise Motivationsprobleme'
-      ]
+      ],
+      images: []
     },
     {
       type: 'content',
@@ -100,7 +109,8 @@ const RetroSlideshow = () => {
         '💪 Motivationsprobleme durch Feedback überwunden',
         '📈 Kontinuierliche Verbesserung durch Rückmeldungen',
         '🎮 Tieferes Verständnis für Spielmechaniken entwickelt'
-      ]
+      ],
+      images: []
     },
     {
       type: 'content',
@@ -114,7 +124,8 @@ const RetroSlideshow = () => {
         '🔄 Rückmeldungen aktiv genutzt zur Verbesserung',
         '',
         '🚀 MISSION ACCOMPLISHED! 🚀'
-      ]
+      ],
+      images: []
     },
     {
       type: 'content',
@@ -127,7 +138,8 @@ const RetroSlideshow = () => {
         '🎵 Mehr Soundeffekte hinzufügen',
         '🏆 Highscore-System implementieren',
         '🌌 Neue Level-Designs erstellen'
-      ]
+      ],
+      images: []
     },
     {
       type: 'content',
@@ -141,7 +153,8 @@ const RetroSlideshow = () => {
         '📝 Dokumentations-Standards',
         '🔄 Versionskontrolle mit Git',
         '🧪 Testing-Methoden'
-      ]
+      ],
+      images: []
     },
     {
       type: 'content',
@@ -155,19 +168,21 @@ const RetroSlideshow = () => {
         '👥 Community-Features einbauen',
         '📱 Cross-Platform-Kompatibilität',
         '🎯 E-Sports-Turnier-Modus'
-      ]
+      ],
+      images: []
     }
   ];
 
-  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
-  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  const nextSlide = () => setCurrentSlide(prev => (prev + 1) % slides.length);
+  const prevSlide = () => setCurrentSlide(prev => (prev - 1 + slides.length) % slides.length);
   const goToSlide = (index: number) => setCurrentSlide(index);
 
   const currentSlideData = slides[currentSlide];
 
   return (
     <div className="w-full h-screen bg-gradient-to-b from-purple-900 via-blue-900 to-black relative overflow-hidden">
-      {stars.map((star) => (
+      {/* Sterne im Hintergrund */}
+      {stars.map(star => (
         <div
           key={star.id}
           className="absolute animate-pulse"
@@ -178,6 +193,7 @@ const RetroSlideshow = () => {
       ))}
 
       <div className="relative z-10 h-full flex flex-col">
+        {/* Header */}
         <div className="bg-black bg-opacity-50 border-b-4 border-cyan-400 p-4">
           <div className="flex justify-between items-center">
             <div className="pixel-font text-cyan-400 text-lg font-bold">
@@ -185,11 +201,11 @@ const RetroSlideshow = () => {
             </div>
             <ScrollArea className="max-w-md">
               <div className="flex space-x-2">
-                {slides.map((_, index) => (
+                {slides.map((_, idx) => (
                   <button
-                    key={index}
-                    onClick={() => goToSlide(index)}
-                    className={`w-3 h-3 border-2 flex-shrink-0 ${index === currentSlide ? 'bg-cyan-400 border-cyan-400' : 'bg-transparent border-gray-500'} hover:border-cyan-400 transition-colors`}
+                    key={idx}
+                    onClick={() => goToSlide(idx)}
+                    className={`w-3 h-3 border-2 flex-shrink-0 ${idx === currentSlide ? 'bg-cyan-400 border-cyan-400' : 'bg-transparent border-gray-500'} hover:border-cyan-400 transition-colors`}
                   />
                 ))}
               </div>
@@ -197,12 +213,20 @@ const RetroSlideshow = () => {
           </div>
         </div>
 
+        {/* Hauptbereich */}
         <div className="flex-1 flex items-center justify-center p-4 relative">
-          <button onClick={prevSlide} disabled={currentSlide === 0} className={`absolute left-4 top-1/2 transform -translate-y-1/2 z-20 pixel-font bg-purple-600 hover:bg-purple-500 text-white px-4 py-3 border-2 border-cyan-400 transition-all duration-200 ${currentSlide === 0 ? 'opacity-30 cursor-not-allowed' : 'hover:border-yellow-400 hover:shadow-lg glow-animation'}`}>
+          <button
+            onClick={prevSlide}
+            disabled={currentSlide === 0}
+            className={`absolute left-4 top-1/2 transform -translate-y-1/2 z-20 pixel-font bg-purple-600 hover:bg-purple-500 text-white px-4 py-3 border-2 border-cyan-400 transition-all duration-200 ${currentSlide === 0 ? 'opacity-30 cursor-not-allowed' : 'hover:border-yellow-400 hover:shadow-lg glow-animation'}`}
+          >
             <ChevronLeft size={24} />
           </button>
-
-          <button onClick={nextSlide} disabled={currentSlide === slides.length - 1} className={`absolute right-4 top-1/2 transform -translate-y-1/2 z-20 pixel-font bg-purple-600 hover:bg-purple-500 text-white px-4 py-3 border-2 border-cyan-400 transition-all duration-200 ${currentSlide === slides.length - 1 ? 'opacity-30 cursor-not-allowed' : 'hover:border-yellow-400 hover:shadow-lg glow-animation'}`}>
+          <button
+            onClick={nextSlide}
+            disabled={currentSlide === slides.length - 1}
+            className={`absolute right-4 top-1/2 transform -translate-y-1/2 z-20 pixel-font bg-purple-600 hover:bg-purple-500 text-white px-4 py-3 border-2 border-cyan-400 transition-all duration-200 ${currentSlide === slides.length - 1 ? 'opacity-30 cursor-not-allowed' : 'hover:border-yellow-400 hover:shadow-lg glow-animation'}`}
+          >
             <ChevronRight size={24} />
           </button>
 
@@ -235,11 +259,11 @@ const RetroSlideshow = () => {
                 <div className="bg-black bg-opacity-70 border-4 border-cyan-400 p-6 rounded-lg flex-1">
                   <ScrollArea className="h-full">
                     <div className="space-y-3">
-                      {currentSlideData.content?.map((item, index) => (
+                      {currentSlideData.content?.map((item, i) => (
                         <div
-                          key={index}
+                          key={i}
                           className="pixel-font text-lg md:text-xl lg:text-2xl text-white hover:text-cyan-400 transition-colors cursor-pointer flex items-center space-x-4 p-2 hover:bg-cyan-400 hover:bg-opacity-10 rounded"
-                          onClick={() => goToSlide(index + 2)}
+                          onClick={() => goToSlide(i + 2)}
                         >
                           <Zap className="text-yellow-400 flex-shrink-0" size={20} />
                           <span>{item}</span>
@@ -265,10 +289,18 @@ const RetroSlideshow = () => {
                   <div className="col-span-2 bg-black bg-opacity-70 border-4 border-cyan-400 p-4 md:p-6 rounded-lg h-full">
                     <ScrollArea className="h-full">
                       <div className="space-y-2 pr-4">
-                        {currentSlideData.content?.map((item, index) => (
+                        {currentSlideData.content?.map((item, i) => (
                           <div
-                            key={index}
-                            className={`pixel-font ${item.startsWith('🎉') || item.startsWith('⚠️') ? 'text-yellow-400 font-bold text-lg md:text-xl lg:text-2xl' : item.startsWith('•') ? 'text-cyan-300 ml-4 md:ml-6 text-sm md:text-base lg:text-lg' : item === '' ? 'h-2' : 'text-white text-sm md:text-base lg:text-lg'} leading-relaxed break-words`}
+                            key={i}
+                            className={`pixel-font ${
+                              item.startsWith('🎉') || item.startsWith('⚠️')
+                                ? 'text-yellow-400 font-bold text-lg md:text-xl lg:text-2xl'
+                                : item.startsWith('•')
+                                ? 'text-cyan-300 ml-4 md:ml-6 text-sm md:text-base lg:text-lg'
+                                : item === ''
+                                ? 'h-2'
+                                : 'text-white text-sm md:text-base lg:text-lg'
+                            } leading-relaxed break-words`}
                           >
                             {item}
                           </div>
@@ -276,9 +308,27 @@ const RetroSlideshow = () => {
                       </div>
                     </ScrollArea>
                   </div>
+
                   <div className="flex flex-col gap-4">
-                    <div className="w-full aspect-video bg-cyan-950 border-2 border-cyan-400 rounded-lg flex items-center justify-center text-cyan-300">Bild 1</div>
-                    <div className="w-full aspect-video bg-cyan-950 border-2 border-cyan-400 rounded-lg flex items-center justify-center text-cyan-300">Bild 2</div>
+                    {(currentSlideData.images || []).length > 0 ? (
+                      currentSlideData.images.map((src, idx) => (
+                        <img
+                          key={idx}
+                          src={src}
+                          alt={`Bild ${idx + 1}`}
+                          className="w-full aspect-video object-cover border-2 border-cyan-400 rounded-lg"
+                        />
+                      ))
+                    ) : (
+                      <>
+                        <div className="w-full aspect-video bg-cyan-950 border-2 border-cyan-400 rounded-lg flex items-center justify-center text-cyan-300">
+                          Kein Bild
+                        </div>
+                        <div className="w-full aspect-video bg-cyan-950 border-2 border-cyan-400 rounded-lg flex items-center justify-center text-cyan-300">
+                          Kein Bild
+                        </div>
+                      </>
+                    )}
                   </div>
                 </div>
               </div>
@@ -286,6 +336,7 @@ const RetroSlideshow = () => {
           </div>
         </div>
 
+        {/* Footer */}
         <div className="bg-black bg-opacity-50 border-t-4 border-cyan-400 p-4">
           <div className="flex justify-center items-center">
             <div className="pixel-font text-cyan-400 text-lg">
@@ -295,12 +346,9 @@ const RetroSlideshow = () => {
         </div>
       </div>
 
-      <div className="absolute top-20 right-10 text-4xl animate-bounce">
-        🛸
-      </div>
-      <div className="absolute bottom-20 left-10 text-3xl animate-pulse">
-        🌟
-      </div>
+      {/* Optionales dekoratives Overlay */}
+      <div className="absolute top-20 right-10 text-4xl animate-bounce">🛸</div>
+      <div className="absolute bottom-20 left-10 text-3xl animate-pulse">🌟</div>
     </div>
   );
 };
