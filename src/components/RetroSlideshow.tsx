@@ -57,7 +57,7 @@ const RetroSlideshow = () => {
         '🎮 Spieler steuert ein Raumschiff, weicht Asteroiden aus und schießt sie ab',
         '🌟 Features: Lebenssystem, Punktesystem, Power-Ups, verschiedene Asteroiden',
         '🎨 Eigenes Design: Hintergrund, Raumschiff, Laser etc.',
-        '✅ Spiel läuft stabil und ohne Fehler'
+        '✅ Vorschau des Projekts'
       ],
       images: [
         'https://i.imgur.com/48BeYyx.png',
