@@ -285,6 +285,14 @@ const RetroSlideshow = () => {
             )}
           </div>
         </div>
+
+        <div className="bg-black bg-opacity-50 border-t-4 border-cyan-400 p-4">
+          <div className="flex justify-between items-center">
+            <div className="pixel-font text-cyan-400 text-lg">
+              {currentSlide + 1} / {slides.length}
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className="absolute top-20 right-10 text-4xl animate-bounce">
