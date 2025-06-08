@@ -171,7 +171,7 @@ const RetroSlideshow = () => {
         <div
           key={star.id}
           className="absolute animate-pulse"
-          style={{ left: `${star.x}%`, top: `${star.y}%`, width: `${star.size}px`, height: `${star.size}px` }}
+          style={{ left: ${star.x}%, top: ${star.y}%, width: ${star.size}px, height: ${star.size}px }}
         >
           <Star className="text-white opacity-70" size={star.size} />
         </div>
@@ -189,7 +189,7 @@ const RetroSlideshow = () => {
                   <button
                     key={index}
                     onClick={() => goToSlide(index)}
-                    className={`w-3 h-3 border-2 flex-shrink-0 ${index === currentSlide ? 'bg-cyan-400 border-cyan-400' : 'bg-transparent border-gray-500'} hover:border-cyan-400 transition-colors`}
+                    className={w-3 h-3 border-2 flex-shrink-0 ${index === currentSlide ? 'bg-cyan-400 border-cyan-400' : 'bg-transparent border-gray-500'} hover:border-cyan-400 transition-colors}
                   />
                 ))}
               </div>
@@ -198,77 +198,116 @@ const RetroSlideshow = () => {
         </div>
 
         <div className="flex-1 flex items-center justify-center p-4 relative">
-          <button
-            onClick={prevSlide}
-            disabled={currentSlide === 0}
-            className={`absolute left-4 top-1/2 transform -translate-y-1/2 z-20 pixel-font bg-purple-600 hover:bg-purple-500 text-white px-4 py-3 border-2 border-cyan-400 transition-all duration-200 ${
-              currentSlide === 0 ? 'opacity-30 cursor-not-allowed' : 'hover:border-yellow-400 hover:shadow-lg glow-animation'
-            }`}
-          >
+          <button onClick={prevSlide} disabled={currentSlide === 0} className={absolute left-4 top-1/2 transform -translate-y-1/2 z-20 pixel-font bg-purple-600 hover:bg-purple-500 text-white px-4 py-3 border-2 border-cyan-400 transition-all duration-200 ${currentSlide === 0 ? 'opacity-30 cursor-not-allowed' : 'hover:border-yellow-400 hover:shadow-lg glow-animation'}}>
             <ChevronLeft size={24} />
           </button>
 
-          <button
-            onClick={nextSlide}
-            disabled={currentSlide === slides.length - 1}
-            className={`absolute right-4 top-1/2 transform -translate-y-1/2 z-20 pixel-font bg-purple-600 hover:bg-purple-500 text-white px-4 py-3 border-2 border-cyan-400 transition-all duration-200 ${
-              currentSlide === slides.length - 1 ? 'opacity-30 cursor-not-allowed' : 'hover:border-yellow-400 hover:shadow-lg glow-animation'
-            }`}
-          >
+          <button onClick={nextSlide} disabled={currentSlide === slides.length - 1} className={absolute right-4 top-1/2 transform -translate-y-1/2 z-20 pixel-font bg-purple-600 hover:bg-purple-500 text-white px-4 py-3 border-2 border-cyan-400 transition-all duration-200 ${currentSlide === slides.length - 1 ? 'opacity-30 cursor-not-allowed' : 'hover:border-yellow-400 hover:shadow-lg glow-animation'}}>
             <ChevronRight size={24} />
           </button>
 
           <div className="max-w-5xl w-full mx-8 h-full flex items-center">
             {currentSlideData.type === 'title' && (
-              <div className="text-center w-full">
-                <h1 className="pixel-font text-cyan-400 text-6xl font-extrabold">{currentSlideData.title}</h1>
-                {currentSlideData.subtitle && (
-                  <p className="pixel-font text-cyan-400 text-2xl mt-4">{currentSlideData.subtitle}</p>
-                )}
+              <div className="text-center space-y-6 w-full">
+                <div className="space-y-4">
+                  <div className="pixel-font text-4xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-pink-500 to-yellow-400 animate-pulse">
+                    {currentSlideData.title}
+                  </div>
+                  <div className="text-xl md:text-2xl lg:text-3xl text-cyan-300 pixel-font">
+                    {currentSlideData.subtitle}
+                  </div>
+                </div>
+                <div className="flex justify-center space-x-8">
+                  <div className="text-4xl md:text-6xl animate-bounce">🚀</div>
+                  <div className="text-4xl md:text-6xl animate-bounce delay-100">⭐</div>
+                  <div className="text-4xl md:text-6xl animate-bounce delay-200">👾</div>
+                </div>
               </div>
             )}
 
             {currentSlideData.type === 'menu' && (
-              <div className="pixel-font text-cyan-400 text-center w-full">
-                <h2 className="text-5xl font-bold mb-8">{currentSlideData.title}</h2>
-                <ul className="space-y-3 text-xl">
-                  {currentSlideData.content.map((item, i) => (
-                    <li
-                      key={i}
-                      className={`cursor-pointer transition-colors duration-200 ${
-                        i === currentSlide ? 'text-yellow-400 font-extrabold' : ''
-                      }`}
-                      onClick={() => goToSlide(i + 2)} // Menü zeigt Folien ab Index 2 an
-                    >
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+              <div className="space-y-6 w-full h-full flex flex-col">
+                <div className="text-center flex-shrink-0">
+                  <h1 className="pixel-font text-3xl md:text-4xl lg:text-5xl font-bold text-cyan-400 mb-4">
+                    {currentSlideData.title}
+                  </h1>
+                </div>
+                <div className="bg-black bg-opacity-70 border-4 border-cyan-400 p-6 rounded-lg flex-1">
+                  <ScrollArea className="h-full">
+                    <div className="space-y-3">
+                      {currentSlideData.content?.map((item, index) => (
+                        <div
+                          key={index}
+                          className="pixel-font text-lg md:text-xl lg:text-2xl text-white hover:text-cyan-400 transition-colors cursor-pointer flex items-center space-x-4 p-2 hover:bg-cyan-400 hover:bg-opacity-10 rounded"
+                          onClick={() => goToSlide(index + 2)}
+                        >
+                          <Zap className="text-yellow-400 flex-shrink-0" size={20} />
+                          <span>{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </ScrollArea>
+                </div>
               </div>
             )}
 
             {currentSlideData.type === 'content' && (
-              <div className="pixel-font text-cyan-400 max-w-3xl">
-                <h2 className="text-4xl font-bold mb-4">{currentSlideData.title}</h2>
-                {currentSlideData.subtitle && (
-                  <h3 className="text-xl mb-6">{currentSlideData.subtitle}</h3>
-                )}
-                <ul className="list-disc list-inside space-y-2 text-lg">
-                  {currentSlideData.content.map((line, idx) => (
-                    <li key={idx}>{line}</li>
-                  ))}
-                </ul>
+              <div className="space-y-4 w-full h-full flex flex-col">
+                <div className="text-center flex-shrink-0">
+                  <h1 className="pixel-font text-2xl md:text-3xl lg:text-4xl font-bold text-cyan-400 mb-2">
+                    {currentSlideData.title}
+                  </h1>
+                  <h2 className="pixel-font text-lg md:text-xl lg:text-2xl text-pink-400">
+                    {currentSlideData.subtitle}
+                  </h2>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-start flex-1">
+                  <div className="col-span-2 bg-black bg-opacity-70 border-4 border-cyan-400 p-4 md:p-6 rounded-lg h-full">
+                    <ScrollArea className="h-full">
+                      <div className="space-y-2 pr-4">
+                        {currentSlideData.content?.map((item, index) => (
+                          <div
+                            key={index}
+                            className={pixel-font ${item.startsWith('🎉') || item.startsWith('⚠️') ? 'text-yellow-400 font-bold text-lg md:text-xl lg:text-2xl' : item.startsWith('•') ? 'text-cyan-300 ml-4 md:ml-6 text-sm md:text-base lg:text-lg' : item === '' ? 'h-2' : 'text-white text-sm md:text-base lg:text-lg'} leading-relaxed break-words}
+                          >
+                            {item}
+                          </div>
+                        ))}
+                      </div>
+                    </ScrollArea>
+                  </div>
+                  <div className="flex flex-col gap-4">
+                    <div className="w-full aspect-video bg-cyan-950 border-2 border-cyan-400 rounded-lg flex items-center justify-center text-cyan-300">Bild 1</div>
+                    <div className="w-full aspect-video bg-cyan-950 border-2 border-cyan-400 rounded-lg flex items-center justify-center text-cyan-300">Bild 2</div>
+                  </div>
+                </div>
               </div>
             )}
           </div>
         </div>
 
-        {/* Footer mit nur Seitenzahl-Anzeige (Buttons entfernt) */}
-        <footer className="flex justify-center items-center p-4 border-t border-cyan-400 bg-black bg-opacity-50">
-          <div className="text-cyan-400 pixel-font">
-            {currentSlide + 1} / {slides.length}
+        <div className="bg-black bg-opacity-50 border-t-4 border-cyan-400 p-4">
+          <div className="flex justify-between items-center">
+            <button onClick={prevSlide} className="pixel-font bg-purple-600 hover:bg-purple-500 text-white px-6 py-3 border-2 border-white hover:border-cyan-400 transition-all flex items-center space-x-2" disabled={currentSlide === 0}>
+              <ChevronLeft size={20} />
+              <span>ZURÜCK</span>
+            </button>
+            <div className="pixel-font text-cyan-400 text-lg">
+              {currentSlide + 1} / {slides.length}
+            </div>
+            <button onClick={nextSlide} className="pixel-font bg-purple-600 hover:bg-purple-500 text-white px-6 py-3 border-2 border-white hover:border-cyan-400 transition-all flex items-center space-x-2" disabled={currentSlide === slides.length - 1}>
+              <span>WEITER</span>
+              <ChevronRight size={20} />
+            </button>
           </div>
-        </footer>
+        </div>
+      </div>
+
+      <div className="absolute top-20 right-10 text-4xl animate-bounce">
+        🛸
+      </div>
+      <div className="absolute bottom-20 left-10 text-3xl animate-pulse">
+        🌟
       </div>
     </div>
   );
