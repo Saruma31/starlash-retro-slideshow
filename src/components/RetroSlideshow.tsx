@@ -23,7 +23,140 @@ const RetroSlideshow = () => {
   }, []);
 
   const slides = [
-    // ... deine Slides hier ...
+    {
+      type: 'title',
+      title: 'STARLASH',
+      subtitle: 'Ein selbst programmiertes Videospiel',
+      content: null
+    },
+    {
+      type: 'menu',
+      title: 'INHALTSVERZEICHNIS',
+      subtitle: '',
+      content: [
+        '1. Präsentation des Produkts',
+        '2. Arbeitsschritte',
+        '3. Highlights und Schwierigkeiten',
+        '4. Reflexion der Ziele',
+        '5. Fazit',
+        '6. Zusätzliche Features',
+        '7. Technische Details',
+        '8. Zukunftspläne'
+      ]
+    },
+    {
+      type: 'content',
+      title: 'PRODUKT',
+      subtitle: 'Space-Shooter-Spiel',
+      content: [
+        '🚀 Selbst programmiertes Space-Shooter-Spiel',
+        '⚡ Mit Unity und C# entwickelt',
+        '🎮 Spieler steuert ein Raumschiff, weicht Asteroiden aus und schießt sie ab',
+        '🌟 Features: Lebenssystem, Punktesystem, Power-Ups, verschiedene Asteroiden',
+        '🎨 Eigenes Design: Hintergrund, Raumschiff, Laser etc.',
+        '✅ Spiel läuft stabil und ohne Fehler'
+      ]
+    },
+    {
+      type: 'content',
+      title: 'ARBEITSSCHRITTE',
+      subtitle: 'Entwicklungsprozess',
+      content: [
+        '💡 Projektidee festgelegt: Spielentwicklung mit Unity',
+        '📚 Tutorials geschaut, Grundlagen gelernt',
+        '🎯 Spielfläche gestaltet (Hintergrund, Raumschiff, Asteroiden)',
+        '⚙️ Skripte erstellt: Bewegung, Schießen, Kollision',
+        '📱 Menüs eingebaut: Start, Pause, Game Over',
+        '🔄 Feedback gesammelt → neue Features eingebaut',
+        '🛠️ Fehlerbehebung, Design angepasst, Soundeffekte ergänzt',
+        '📋 Dokumentation und Präsentation vorbereitet'
+      ]
+    },
+    {
+      type: 'content',
+      title: 'HIGHLIGHTS & SCHWIERIGKEITEN',
+      subtitle: 'Erfolge und Herausforderungen',
+      content: [
+        '🎉 HIGHLIGHTS:',
+        '• Erster spielbarer Prototyp',
+        '• Eigener Lernfortschritt mit Unity und C#',
+        '• Power-Up-System und verschiedene Gegnerarten',
+        '• Positives Feedback von Mitschülern',
+        '',
+        '⚠️ SCHWIERIGKEITEN:',
+        '• Schuss-Cooldown korrekt umsetzen',
+        '• Kombination von Spiellogik und UI',
+        '• Phasenweise Motivationsprobleme'
+      ]
+    },
+    {
+      type: 'content',
+      title: 'REFLEXION',
+      subtitle: 'Erkenntnisse und Lernerfahrungen',
+      content: [
+        '🎯 Technische Herausforderungen gemeistert',
+        '🔧 Schuss-Cooldown erfolgreich implementiert',
+        '🖥️ UI-Integration mit Spiellogik verbunden',
+        '💪 Motivationsprobleme durch Feedback überwunden',
+        '📈 Kontinuierliche Verbesserung durch Rückmeldungen',
+        '🎮 Tieferes Verständnis für Spielmechaniken entwickelt'
+      ]
+    },
+    {
+      type: 'content',
+      title: 'FAZIT',
+      subtitle: 'Projektergebnis',
+      content: [
+        '✅ Spiel läuft stabil, ohne Bugs → Ziel erreicht',
+        '🎯 Viele geplante Features erfolgreich umgesetzt',
+        '🎮 Spiel macht Spaß, wird mit der Zeit schwieriger',
+        '📚 Gelernt: Umgang mit Unity, Spielmechaniken, Fehlerbehebung',
+        '🔄 Rückmeldungen aktiv genutzt zur Verbesserung',
+        '',
+        '🚀 MISSION ACCOMPLISHED! 🚀'
+      ]
+    },
+    {
+      type: 'content',
+      title: 'ZUSÄTZLICHE FEATURES',
+      subtitle: 'Erweiterte Funktionen',
+      content: [
+        '🎨 Platzhalter-Inhalt für weitere Features',
+        '🔮 Zukünftige Entwicklungen geplant',
+        '⭐ Power-Up-Systeme erweitern',
+        '🎵 Mehr Soundeffekte hinzufügen',
+        '🏆 Highscore-System implementieren',
+        '🌌 Neue Level-Designs erstellen'
+      ]
+    },
+    {
+      type: 'content',
+      title: 'TECHNISCHE DETAILS',
+      subtitle: 'Entwicklungsaspekte',
+      content: [
+        '💻 Code-Architektur und Struktur',
+        '🔧 Verwendete Design-Patterns',
+        '📊 Performance-Optimierungen',
+        '🐛 Debugging-Strategien',
+        '📝 Dokumentations-Standards',
+        '🔄 Versionskontrolle mit Git',
+        '🧪 Testing-Methoden'
+      ]
+    },
+    {
+      type: 'content',
+      title: 'ZUKUNFTSPLÄNE',
+      subtitle: 'Nächste Schritte',
+      content: [
+        '🚀 Mobile Version entwickeln',
+        '🌐 Multiplayer-Funktionen hinzufügen',
+        '🎮 VR-Support implementieren',
+        '🏪 Steam-Veröffentlichung planen',
+        '👥 Community-Features einbauen',
+        '📱 Cross-Platform-Kompatibilität',
+        '🎯 E-Sports-Turnier-Modus'
+      ]
+    }
   ];
 
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -74,11 +207,57 @@ const RetroSlideshow = () => {
           </button>
 
           <div className="max-w-5xl w-full mx-8 h-full flex items-center">
-            {/* Slide content rendering wie gehabt */}
+            {currentSlideData.type === 'title' && (
+              <div className="text-center space-y-6 w-full">
+                <div className="space-y-4">
+                  <div className="pixel-font text-4xl md:text-6xl lg:text-8xl text-cyan-400 drop-shadow-[0_0_10px_cyan]">
+                    {currentSlideData.title}
+                  </div>
+                  {currentSlideData.subtitle && (
+                    <div className="pixel-font text-xl md:text-2xl lg:text-4xl text-gray-300">
+                      {currentSlideData.subtitle}
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+
+            {currentSlideData.type === 'menu' && (
+              <div className="w-full">
+                <div className="pixel-font text-3xl md:text-5xl text-cyan-400 mb-6">
+                  {currentSlideData.title}
+                </div>
+                <ScrollArea className="h-64 bg-black bg-opacity-50 p-4 rounded-md border border-cyan-400">
+                  <ul className="pixel-font text-lg md:text-xl space-y-2 list-disc list-inside text-gray-300">
+                    {currentSlideData.content?.map((item, idx) => (
+                      <li key={idx}>{item}</li>
+                    ))}
+                  </ul>
+                </ScrollArea>
+              </div>
+            )}
+
+            {currentSlideData.type === 'content' && (
+              <div className="w-full">
+                <div className="pixel-font text-3xl md:text-5xl text-cyan-400 mb-6">
+                  {currentSlideData.title}
+                </div>
+                {currentSlideData.subtitle && (
+                  <div className="pixel-font text-xl md:text-2xl mb-4 text-gray-300">
+                    {currentSlideData.subtitle}
+                  </div>
+                )}
+                <ul className="pixel-font text-lg md:text-xl space-y-2 text-gray-300 list-disc list-inside">
+                  {currentSlideData.content?.map((item, idx) => (
+                    <li key={idx}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </div>
 
-        {/* Footer mit den Buttons wurde entfernt */}
+        {/* HIER IST DER FOOTER-BEREICH MIT DEN BUTTONS GELÖSCHT */}
 
       </div>
 
