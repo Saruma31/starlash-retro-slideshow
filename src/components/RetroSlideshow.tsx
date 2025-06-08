@@ -287,7 +287,7 @@ const RetroSlideshow = () => {
         </div>
 
         <div className="bg-black bg-opacity-50 border-t-4 border-cyan-400 p-4">
-          <div className="flex justify-between items-center">
+          <div className="flex justify-center items-center">
             <div className="pixel-font text-cyan-400 text-lg">
               {currentSlide + 1} / {slides.length}
             </div>
