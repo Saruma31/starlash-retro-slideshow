@@ -60,7 +60,7 @@ const RetroSlideshow = () => {
         '✅ Spiel läuft stabil und ohne Fehler'
       ],
       images: [
-        'https://placekitten.com/400/225',
+        'https://i.imgur.com/48BeYyx.png',
         'https://placekitten.com/401/225'
       ]
     },
