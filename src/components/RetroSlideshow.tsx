@@ -90,7 +90,7 @@ const RetroSlideshow = () => {
         '• Eigener Lernfortschritt mit Unity und C#',
         '• Power-Up-System und verschiedene Gegnerarten',
         '• Positives Feedback von Mitschülern',
-        '• Präsenation als Website',
+        '• Präsentation als Website',
         '',
         '⚠️ SCHWIERIGKEITEN:',
         '• Schuss-Cooldown korrekt umsetzen',
