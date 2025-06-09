@@ -132,8 +132,8 @@ const RetroSlideshow = () => {
         '✅ Erfolgreiches Projekt 🎉'
       ],
       images: [
-        'https://i.imgur.com/xzjChoc.png',
-        'https://i.imgur.com/4aCTgyj.png'
+        'https://i.imgur.com/CfViGgW.png',
+        'https://i.imgur.com/LdmfvEz.png'
      ]
     },
     {
