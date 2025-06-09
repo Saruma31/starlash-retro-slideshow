@@ -138,7 +138,7 @@ const RetroSlideshow = () => {
     },
     {
       type: 'title',
-      title: 'STARLASH',
+      title: 'ENDE DER PRÄSENTATION',
       subtitle: 'Vielen Dank fürs Zuhören',
       content: null,
       images: ['https://i.imgur.com/zQ4RG2j.jpeg']
