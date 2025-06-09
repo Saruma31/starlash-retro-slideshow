@@ -206,7 +206,13 @@ const RetroSlideshow = () => {
             {currentSlideData.type === 'title' && (
               <div className="text-center space-y-6 w-full flex flex-col items-center">
                 <div className="space-y-4">
-                  <div className="pixel-font text-4xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-pink-500 to-yellow-400 animate-pulse">
+                  <div
+                    className={`pixel-font font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-pink-500 to-yellow-400 animate-pulse ${
+                      currentSlide === slides.length - 1
+                        ? 'text-2xl md:text-4xl lg:text-5xl'
+                        : 'text-4xl md:text-6xl lg:text-7xl'
+                    }`}
+                  >
                     {currentSlideData.title}
                   </div>
                   <div className="text-xl md:text-2xl lg:text-3xl text-cyan-300 pixel-font">
@@ -258,77 +264,37 @@ const RetroSlideshow = () => {
             {currentSlideData.type === 'content' && (
               <div className="space-y-4 w-full h-full flex flex-col">
                 <div className="text-center flex-shrink-0">
-                  <h1 className="pixel-font text-2xl md:text-3xl lg:text-4xl font-bold text-cyan-400 mb-2">
+                  <h1 className="pixel-font text-2xl md:text-3xl lg:text-4xl font-bold text-yellow-400 mb-2">
                     {currentSlideData.title}
                   </h1>
-                  <h2 className="pixel-font text-lg md:text-xl lg:text-2xl text-pink-400">
+                  <h2 className="pixel-font text-lg md:text-xl lg:text-2xl text-yellow-300 mb-4">
                     {currentSlideData.subtitle}
                   </h2>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-start flex-1">
-                  <div className="col-span-2 bg-black bg-opacity-70 border-4 border-cyan-400 p-4 md:p-6 rounded-lg h-full">
-                    <ScrollArea className="h-full">
-                      <div className="space-y-2 pr-4">
-                        {currentSlideData.content?.map((item, i) => (
-                          <div
-                            key={i}
-                            className={`pixel-font ${
-                              item.startsWith('🎉') || item.startsWith('⚠️')
-                                ? 'text-yellow-400 font-bold text-lg md:text-xl lg:text-2xl'
-                                : item.startsWith('•')
-                                ? 'text-cyan-300 ml-4 md:ml-6 text-sm md:text-base lg:text-lg'
-                                : item === ''
-                                ? 'h-2'
-                                : 'text-white text-sm md:text-base lg:text-lg'
-                            } leading-relaxed break-words`}
-                          >
-                            {item}
-                          </div>
-                        ))}
-                      </div>
-                    </ScrollArea>
+                <div className="flex flex-col md:flex-row md:space-x-6 h-full overflow-hidden">
+                  <div className="md:flex-1 bg-black bg-opacity-80 border-4 border-yellow-400 p-4 rounded-lg overflow-y-auto space-y-2 pixel-font text-white text-base md:text-lg lg:text-xl">
+                    {currentSlideData.content?.map((line, idx) => (
+                      <p key={idx}>{line}</p>
+                    ))}
                   </div>
-
-                  <div className="flex flex-col gap-4">
-                    {(currentSlideData.images || []).length > 0 ? (
-                      currentSlideData.images.map((src, idx) => (
+                  {currentSlideData.images.length > 0 && (
+                    <div className="md:flex-1 mt-4 md:mt-0 flex flex-col items-center justify-center space-y-4">
+                      {currentSlideData.images.map((src, idx) => (
                         <img
                           key={idx}
                           src={src}
                           alt={`Bild ${idx + 1}`}
-                          className="w-full aspect-video object-cover border-2 border-cyan-400 rounded-lg"
+                          className="max-h-48 md:max-h-64 rounded-lg border-2 border-yellow-400 shadow-lg"
                         />
-                      ))
-                    ) : (
-                      <>
-                        <div className="w-full aspect-video bg-cyan-950 border-2 border-cyan-400 rounded-lg flex items-center justify-center text-cyan-300">
-                          Kein Bild
-                        </div>
-                        <div className="w-full aspect-video bg-cyan-950 border-2 border-cyan-400 rounded-lg flex items-center justify-center text-cyan-300">
-                          Kein Bild
-                        </div>
-                      </>
-                    )}
-                  </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             )}
           </div>
         </div>
-
-        {/* Footer */}
-        <div className="bg-black bg-opacity-50 border-t-4 border-cyan-400 p-4">
-          <div className="flex justify-center items-center">
-            <div className="pixel-font text-cyan-400 text-lg">
-              {currentSlide + 1} / {slides.length}
-            </div>
-          </div>
-        </div>
       </div>
-
-      {/* Optionales dekoratives Overlay */}
-      <div className="absolute top-20 right-10 text-4xl animate-bounce">🛸</div>
-      <div className="absolute bottom-20 left-10 text-3xl animate-pulse">🌟</div>
     </div>
   );
 };
