@@ -97,7 +97,7 @@ const RetroSlideshow = () => {
         '⚠️ SCHWIERIGKEITEN:',
         '• Schuss-Cooldown korrekt umsetzen',
         '• Kombination von Spiellogik und UI',
-        '• Phasenweise Motivationsprobleme'
+        '• Ideensuche'
       ],
       images: [
         'https://i.imgur.com/hEaiafe.png',
