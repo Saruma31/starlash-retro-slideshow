@@ -79,7 +79,7 @@ const RetroSlideshow = () => {
         '📋 Dokumentation und Präsentation vorbereitet'
       ],
       images: [
-        'https://i.imgur.com/BoShy9h.png',
+        'https://i.imgur.com/AIYSfjK.png',
         'https://i.imgur.com/OTa7mpq.png'
      ]
     },
