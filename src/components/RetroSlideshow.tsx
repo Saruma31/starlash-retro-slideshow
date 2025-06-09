@@ -136,6 +136,13 @@ const RetroSlideshow = () => {
         'https://i.imgur.com/48BeYyx.png'
      ]
     },
+    {
+      type: 'title',
+      title: 'STARLASH',
+      subtitle: 'Ein selbst programmiertes Videospiel',
+      content: null,
+      images: ['https://i.imgur.com/zQ4RG2j.jpeg']
+    },
   ];
 
   const nextSlide = () => setCurrentSlide(prev => (prev + 1) % slides.length);
