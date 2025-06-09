@@ -72,7 +72,7 @@ const RetroSlideshow = () => {
         '💡 Projektidee festgelegt: Spielentwicklung mit Unity',
         '📚 Tutorials geschaut, Grundlagen gelernt',
         '🎯 Spielfläche gestaltet (Hintergrund, Raumschiff, Asteroiden)',
-        '⚙️ Skripte erstellt: Bewegung, Schießen, Kollision',
+        '⚙️ Skripte erstellt: Bewegung, Schiessen, Kollision',
         '📱 Menüs eingebaut: Start, Pause, Game Over',
         '🔄 Feedback gesammelt → neue Features eingebaut',
         '🛠️ Fehlerbehebung, Design angepasst, Soundeffekte ergänzt',
@@ -128,7 +128,7 @@ const RetroSlideshow = () => {
       content: [
         '✅ Spiel läuft stabil, ohne Bugs → Ziel erreicht',
         '🎯 Viele geplante Features erfolgreich umgesetzt',
-        '🎮 Spiel macht Spaß, wird mit der Zeit schwieriger',
+        '🎮 Spiel macht Spass, wird mit der Zeit schwieriger',
         '📚 Viel gelernt: Unity, Mechaniken, Fehlerbehebung',
         '🔄 Rückmeldungen aktiv genutzt zur Verbesserung',
         '',
