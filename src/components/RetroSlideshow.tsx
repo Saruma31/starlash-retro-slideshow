@@ -132,8 +132,8 @@ const RetroSlideshow = () => {
         '✅ Erfolgreiches Projekt 🎉'
       ],
       images: [
-        'https://i.imgur.com/kHTWx7J.png',
-        'https://i.imgur.com/48BeYyx.png'
+        'https://i.imgur.com/xzjChoc.png',
+        'https://i.imgur.com/4aCTgyj.png'
      ]
     },
     {
@@ -204,7 +204,7 @@ const RetroSlideshow = () => {
 
           <div className="max-w-5xl w-full mx-8 h-full flex items-center">
             {currentSlideData.type === 'title' && (
-              <div className="text-center space-y-6 w-full">
+              <div className="text-center space-y-6 w-full flex flex-col items-center">
                 <div className="space-y-4">
                   <div className="pixel-font text-4xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-pink-500 to-yellow-400 animate-pulse">
                     {currentSlideData.title}
