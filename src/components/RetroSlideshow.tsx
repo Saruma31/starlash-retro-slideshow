@@ -117,7 +117,7 @@ const RetroSlideshow = () => {
         '🎮 Tieferes Verständnis für Spielmechaniken entwickelt'
       ],
       images: [
-        'https://i.imgur.com/RWPtaFk.png',
+        'https://i.imgur.com/FGBH7CN.png',
         'https://i.imgur.com/Kuj5xFi.png'
      ]
     },
