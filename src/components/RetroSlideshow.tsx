@@ -139,7 +139,7 @@ const RetroSlideshow = () => {
     {
       type: 'title',
       title: 'STARLASH',
-      subtitle: 'Ein selbst programmiertes Videospiel',
+      subtitle: 'Vielen Dank fürs Zuhören',
       content: null,
       images: ['https://i.imgur.com/zQ4RG2j.jpeg']
     },
@@ -204,7 +204,7 @@ const RetroSlideshow = () => {
 
           <div className="max-w-5xl w-full mx-8 h-full flex items-center">
             {currentSlideData.type === 'title' && (
-              <div className="text-center space-y-6 w-full">
+              <div className="text-center space-y-6 w-full flex flex-col items-center">
                 <div className="space-y-4">
                   <div className="pixel-font text-4xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-pink-500 to-yellow-400 animate-pulse">
                     {currentSlideData.title}
@@ -213,6 +213,14 @@ const RetroSlideshow = () => {
                     {currentSlideData.subtitle}
                   </div>
                 </div>
+                {/* Hochkantbild einfügen – nur bei letzter Folie */}
+    {currentSlide === slides.length - 1 && currentSlideData.images?.[0] && (
+      <img
+        src={currentSlideData.images[0]}
+        alt="Dankesbild"
+        className="mt-6 h-[60vh] w-auto object-contain border-2 border-cyan-400 rounded-xl shadow-lg"
+      />
+    )}
                 <div className="flex justify-center space-x-8">
                   <div className="text-4xl md:text-6xl animate-bounce">🚀</div>
                   <div className="text-4xl md:text-6xl animate-bounce delay-100">⭐</div>
