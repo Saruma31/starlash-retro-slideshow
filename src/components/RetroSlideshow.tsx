@@ -40,10 +40,7 @@ const RetroSlideshow = () => {
         '2. Arbeitsschritte',
         '3. Highlights und Schwierigkeiten',
         '4. Reflexion der Ziele',
-        '5. Fazit',
-        '6. Zusätzliche Features',
-        '7. Technische Details',
-        '8. Zukunftspläne'
+        '5. Fazit'
       ],
       images: []
     },
@@ -138,59 +135,6 @@ const RetroSlideshow = () => {
         'https://i.imgur.com/48BeYyx.png'
      ]
     },
-    {
-      type: 'content',
-      title: 'ZUSÄTZLICHE FEATURES',
-      subtitle: 'Erweiterte Funktionen',
-      content: [
-        '🎨 Platzhalter-Inhalt für weitere Features',
-        '🔮 Zukünftige Entwicklungen geplant',
-        '⭐ Power-Up-Systeme erweitern',
-        '🎵 Mehr Soundeffekte hinzufügen',
-        '🏆 Highscore-System implementieren',
-        '🌌 Neue Level-Designs erstellen'
-      ],
-      images: [
-        'https://i.imgur.com/kHTWx7J.png',
-        'https://i.imgur.com/48BeYyx.png'
-     ]
-    },
-    {
-      type: 'content',
-      title: 'TECHNISCHE DETAILS',
-      subtitle: 'Entwicklungsaspekte',
-      content: [
-        '💻 Code-Architektur und Struktur',
-        '🔧 Verwendete Design-Patterns',
-        '📊 Performance-Optimierungen',
-        '🐛 Debugging-Strategien',
-        '📝 Dokumentations-Standards',
-        '🔄 Versionskontrolle mit Git',
-        '🧪 Testing-Methoden'
-      ],
-      images: [
-        'https://i.imgur.com/kHTWx7J.png',
-        'https://i.imgur.com/48BeYyx.png'
-     ]
-    },
-    {
-      type: 'content',
-      title: 'ZUKUNFTSPLÄNE',
-      subtitle: 'Nächste Schritte',
-      content: [
-        '🚀 Mobile Version entwickeln',
-        '🌐 Multiplayer-Funktionen hinzufügen',
-        '🎮 VR-Support implementieren',
-        '🏪 Steam-Veröffentlichung planen',
-        '👥 Community-Features einbauen',
-        '📱 Cross-Platform-Kompatibilität',
-        '🎯 E-Sports-Turnier-Modus'
-      ],
-      images: [
-        'https://i.imgur.com/kHTWx7J.png',
-        'https://i.imgur.com/48BeYyx.png'
-     ]
-    }
   ];
 
   const nextSlide = () => setCurrentSlide(prev => (prev + 1) % slides.length);
