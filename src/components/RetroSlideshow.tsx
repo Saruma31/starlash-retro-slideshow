@@ -60,8 +60,8 @@ const RetroSlideshow = () => {
         '✅ Vorschau des Projekts'
       ],
       images: [
-        'https://i.imgur.com/48BeYyx.png',
-        'https://placekitten.com/401/225'
+        'https://i.imgur.com/kHTWx7J.png',
+        'https://i.imgur.com/48BeYyx.png'
       ]
     },
     {
@@ -78,7 +78,10 @@ const RetroSlideshow = () => {
         '🛠️ Fehlerbehebung, Design angepasst, Soundeffekte ergänzt',
         '📋 Dokumentation und Präsentation vorbereitet'
       ],
-      images: []
+      images: [
+        'https://i.imgur.com/K5dcBnR.png',
+        'https://i.imgur.com/OTa7mpq.png'
+     ]
     },
     {
       type: 'content',
@@ -96,7 +99,10 @@ const RetroSlideshow = () => {
         '• Kombination von Spiellogik und UI',
         '• Phasenweise Motivationsprobleme'
       ],
-      images: []
+      images: [
+        'https://i.imgur.com/hEaiafe.png',
+        'https://i.imgur.com/z4CsIQm.jpeg'
+     ]
     },
     {
       type: 'content',
@@ -110,7 +116,10 @@ const RetroSlideshow = () => {
         '📈 Kontinuierliche Verbesserung durch Rückmeldungen',
         '🎮 Tieferes Verständnis für Spielmechaniken entwickelt'
       ],
-      images: []
+      images: [
+        'https://i.imgur.com/RWPtaFk.png',
+        'https://i.imgur.com/Kuj5xFi.png'
+     ]
     },
     {
       type: 'content',
@@ -120,12 +129,15 @@ const RetroSlideshow = () => {
         '✅ Spiel läuft stabil, ohne Bugs → Ziel erreicht',
         '🎯 Viele geplante Features erfolgreich umgesetzt',
         '🎮 Spiel macht Spaß, wird mit der Zeit schwieriger',
-        '📚 Gelernt: Umgang mit Unity, Spielmechaniken, Fehlerbehebung',
+        '📚 Viel gelernt: Unity, Mechaniken, Fehlerbehebung',
         '🔄 Rückmeldungen aktiv genutzt zur Verbesserung',
         '',
-        '🚀 MISSION ACCOMPLISHED! 🚀'
+        '✅ Erfolgreiches Projekt 🎉'
       ],
-      images: []
+      images: [
+        'https://i.imgur.com/kHTWx7J.png',
+        'https://i.imgur.com/48BeYyx.png'
+     ]
     },
     {
       type: 'content',
@@ -139,7 +151,10 @@ const RetroSlideshow = () => {
         '🏆 Highscore-System implementieren',
         '🌌 Neue Level-Designs erstellen'
       ],
-      images: []
+      images: [
+        'https://i.imgur.com/kHTWx7J.png',
+        'https://i.imgur.com/48BeYyx.png'
+     ]
     },
     {
       type: 'content',
@@ -154,7 +169,10 @@ const RetroSlideshow = () => {
         '🔄 Versionskontrolle mit Git',
         '🧪 Testing-Methoden'
       ],
-      images: []
+      images: [
+        'https://i.imgur.com/kHTWx7J.png',
+        'https://i.imgur.com/48BeYyx.png'
+     ]
     },
     {
       type: 'content',
@@ -169,7 +187,10 @@ const RetroSlideshow = () => {
         '📱 Cross-Platform-Kompatibilität',
         '🎯 E-Sports-Turnier-Modus'
       ],
-      images: []
+      images: [
+        'https://i.imgur.com/kHTWx7J.png',
+        'https://i.imgur.com/48BeYyx.png'
+     ]
     }
   ];
 
