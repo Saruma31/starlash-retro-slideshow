@@ -132,13 +132,13 @@ const RetroSlideshow = () => {
         '✅ Erfolgreiches Projekt 🎉'
       ],
       images: [
-        'https://i.imgur.com/xzjChoc.png',
-        'https://i.imgur.com/4aCTgyj.png'
+        'https://i.imgur.com/kHTWx7J.png',
+        'https://i.imgur.com/48BeYyx.png'
      ]
     },
     {
       type: 'title',
-      title: 'Ende der Präsentation',
+      title: 'STARLASH',
       subtitle: 'Vielen Dank fürs Zuhören',
       content: null,
       images: ['https://i.imgur.com/zQ4RG2j.jpeg']
@@ -204,15 +204,23 @@ const RetroSlideshow = () => {
 
           <div className="max-w-5xl w-full mx-8 h-full flex items-center">
             {currentSlideData.type === 'title' && (
-              <div className="text-center space-y-6 w-full flex flex-col items-center">
+              <div className="text-center space-y-6 w-full">
                 <div className="space-y-4">
-                  <div className="pixel-font font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-pink-500 to-yellow-400 animate-pulse text-6xl md:text-7xl lg:text-8xl">
+                  <div className="pixel-font text-4xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-pink-500 to-yellow-400 animate-pulse">
                     {currentSlideData.title}
                   </div>
                   <div className="text-xl md:text-2xl lg:text-3xl text-cyan-300 pixel-font">
                     {currentSlideData.subtitle}
                   </div>
                 </div>
+                {/* Hochkantbild einfügen – nur bei letzter Folie */}
+    {currentSlide === slides.length - 1 && currentSlideData.images?.[0] && (
+      <img
+        src={currentSlideData.images[0]}
+        alt="Dankesbild"
+        className="mt-6 h-[60vh] w-auto object-contain border-2 border-cyan-400 rounded-xl shadow-lg"
+      />
+    )}
                 <div className="flex justify-center space-x-8">
                   <div className="text-4xl md:text-6xl animate-bounce">🚀</div>
                   <div className="text-4xl md:text-6xl animate-bounce delay-100">⭐</div>
@@ -222,37 +230,86 @@ const RetroSlideshow = () => {
             )}
 
             {currentSlideData.type === 'menu' && (
-              <div className="pixel-font text-cyan-300 space-y-6 text-3xl md:text-4xl max-w-xl">
-                <div className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-pink-500 to-yellow-400">
-                  {currentSlideData.title}
+              <div className="space-y-6 w-full h-full flex flex-col">
+                <div className="text-center flex-shrink-0">
+                  <h1 className="pixel-font text-3xl md:text-4xl lg:text-5xl font-bold text-cyan-400 mb-4">
+                    {currentSlideData.title}
+                  </h1>
                 </div>
-                {currentSlideData.content?.map((line, idx) => (
-                  <div key={idx} className="hover:text-yellow-400 cursor-pointer transition-colors">
-                    {line}
-                  </div>
-                ))}
+                <div className="bg-black bg-opacity-70 border-4 border-cyan-400 p-6 rounded-lg flex-1">
+                  <ScrollArea className="h-full">
+                    <div className="space-y-3">
+                      {currentSlideData.content?.map((item, i) => (
+                        <div
+                          key={i}
+                          className="pixel-font text-lg md:text-xl lg:text-2xl text-white hover:text-cyan-400 transition-colors cursor-pointer flex items-center space-x-4 p-2 hover:bg-cyan-400 hover:bg-opacity-10 rounded"
+                          onClick={() => goToSlide(i + 2)}
+                        >
+                          <Zap className="text-yellow-400 flex-shrink-0" size={20} />
+                          <span>{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </ScrollArea>
+                </div>
               </div>
             )}
 
             {currentSlideData.type === 'content' && (
-              <div className="flex flex-col md:flex-row gap-8 max-w-6xl w-full">
-                <div className="flex-1 text-cyan-300 pixel-font text-lg md:text-xl space-y-4 leading-relaxed">
-                  <div className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-pink-500 to-yellow-400 text-3xl md:text-4xl mb-4">
+              <div className="space-y-4 w-full h-full flex flex-col">
+                <div className="text-center flex-shrink-0">
+                  <h1 className="pixel-font text-2xl md:text-3xl lg:text-4xl font-bold text-cyan-400 mb-2">
                     {currentSlideData.title}
-                  </div>
-                  {currentSlideData.content?.map((line, idx) => (
-                    <div key={idx}>{line}</div>
-                  ))}
+                  </h1>
+                  <h2 className="pixel-font text-lg md:text-xl lg:text-2xl text-pink-400">
+                    {currentSlideData.subtitle}
+                  </h2>
                 </div>
-                <div className="flex-1 flex flex-col gap-4">
-                  {currentSlideData.images?.map((src, idx) => (
-                    <img
-                      key={idx}
-                      src={src}
-                      alt={`Bild ${idx + 1}`}
-                      className="rounded-xl border-2 border-cyan-400 shadow-lg object-contain max-h-[45vh]"
-                    />
-                  ))}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-start flex-1">
+                  <div className="col-span-2 bg-black bg-opacity-70 border-4 border-cyan-400 p-4 md:p-6 rounded-lg h-full">
+                    <ScrollArea className="h-full">
+                      <div className="space-y-2 pr-4">
+                        {currentSlideData.content?.map((item, i) => (
+                          <div
+                            key={i}
+                            className={`pixel-font ${
+                              item.startsWith('🎉') || item.startsWith('⚠️')
+                                ? 'text-yellow-400 font-bold text-lg md:text-xl lg:text-2xl'
+                                : item.startsWith('•')
+                                ? 'text-cyan-300 ml-4 md:ml-6 text-sm md:text-base lg:text-lg'
+                                : item === ''
+                                ? 'h-2'
+                                : 'text-white text-sm md:text-base lg:text-lg'
+                            } leading-relaxed break-words`}
+                          >
+                            {item}
+                          </div>
+                        ))}
+                      </div>
+                    </ScrollArea>
+                  </div>
+
+                  <div className="flex flex-col gap-4">
+                    {(currentSlideData.images || []).length > 0 ? (
+                      currentSlideData.images.map((src, idx) => (
+                        <img
+                          key={idx}
+                          src={src}
+                          alt={`Bild ${idx + 1}`}
+                          className="w-full aspect-video object-cover border-2 border-cyan-400 rounded-lg"
+                        />
+                      ))
+                    ) : (
+                      <>
+                        <div className="w-full aspect-video bg-cyan-950 border-2 border-cyan-400 rounded-lg flex items-center justify-center text-cyan-300">
+                          Kein Bild
+                        </div>
+                        <div className="w-full aspect-video bg-cyan-950 border-2 border-cyan-400 rounded-lg flex items-center justify-center text-cyan-300">
+                          Kein Bild
+                        </div>
+                      </>
+                    )}
+                  </div>
                 </div>
               </div>
             )}
@@ -260,10 +317,18 @@ const RetroSlideshow = () => {
         </div>
 
         {/* Footer */}
-        <div className="bg-black bg-opacity-50 border-t-4 border-cyan-400 p-2 text-center text-cyan-400 pixel-font select-none text-sm">
-          {currentSlide + 1} / {slides.length}
+        <div className="bg-black bg-opacity-50 border-t-4 border-cyan-400 p-4">
+          <div className="flex justify-center items-center">
+            <div className="pixel-font text-cyan-400 text-lg">
+              {currentSlide + 1} / {slides.length}
+            </div>
+          </div>
         </div>
       </div>
+
+      {/* Optionales dekoratives Overlay */}
+      <div className="absolute top-20 right-10 text-4xl animate-bounce">🛸</div>
+      <div className="absolute bottom-20 left-10 text-3xl animate-pulse">🌟</div>
     </div>
   );
 };
