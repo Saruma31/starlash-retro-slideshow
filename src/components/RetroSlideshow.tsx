@@ -112,7 +112,6 @@ const RetroSlideshow = () => {
         '🎯 Technische Herausforderungen gemeistert',
         '🔧 Schuss-Cooldown erfolgreich implementiert',
         '🖥️ UI-Integration mit Spiellogik verbunden',
-        '💪 Motivationsprobleme durch Feedback überwunden',
         '📈 Kontinuierliche Verbesserung durch Rückmeldungen',
         '🎮 Tieferes Verständnis für Spielmechaniken entwickelt'
       ],
