@@ -209,8 +209,8 @@ const RetroSlideshow = () => {
                   <div
                     className={`pixel-font font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-pink-500 to-yellow-400 animate-pulse ${
                       currentSlide === slides.length - 1
-                        ? 'text-2xl md:text-4xl lg:text-5xl'
-                        : 'text-4xl md:text-6xl lg:text-7xl'
+                        ? 'text-3xl md:text-4xl lg:text-5xl'
+                        : 'text-6xl md:text-7xl lg:text-8xl'
                     }`}
                   >
                     {currentSlideData.title}
@@ -220,13 +220,13 @@ const RetroSlideshow = () => {
                   </div>
                 </div>
                 {/* Hochkantbild einfügen – nur bei letzter Folie */}
-    {currentSlide === slides.length - 1 && currentSlideData.images?.[0] && (
-      <img
-        src={currentSlideData.images[0]}
-        alt="Dankesbild"
-        className="mt-6 h-[60vh] w-auto object-contain border-2 border-cyan-400 rounded-xl shadow-lg"
-      />
-    )}
+                {currentSlide === slides.length - 1 && currentSlideData.images?.[0] && (
+                  <img
+                    src={currentSlideData.images[0]}
+                    alt="Dankesbild"
+                    className="mt-6 h-[60vh] w-auto object-contain border-2 border-cyan-400 rounded-xl shadow-lg"
+                  />
+                )}
                 <div className="flex justify-center space-x-8">
                   <div className="text-4xl md:text-6xl animate-bounce">🚀</div>
                   <div className="text-4xl md:text-6xl animate-bounce delay-100">⭐</div>
@@ -236,63 +236,46 @@ const RetroSlideshow = () => {
             )}
 
             {currentSlideData.type === 'menu' && (
-              <div className="space-y-6 w-full h-full flex flex-col">
-                <div className="text-center flex-shrink-0">
-                  <h1 className="pixel-font text-3xl md:text-4xl lg:text-5xl font-bold text-cyan-400 mb-4">
-                    {currentSlideData.title}
-                  </h1>
+              <div className="pixel-font text-cyan-300 space-y-6 text-3xl md:text-4xl max-w-xl">
+                <div className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-pink-500 to-yellow-400">
+                  {currentSlideData.title}
                 </div>
-                <div className="bg-black bg-opacity-70 border-4 border-cyan-400 p-6 rounded-lg flex-1">
-                  <ScrollArea className="h-full">
-                    <div className="space-y-3">
-                      {currentSlideData.content?.map((item, i) => (
-                        <div
-                          key={i}
-                          className="pixel-font text-lg md:text-xl lg:text-2xl text-white hover:text-cyan-400 transition-colors cursor-pointer flex items-center space-x-4 p-2 hover:bg-cyan-400 hover:bg-opacity-10 rounded"
-                          onClick={() => goToSlide(i + 2)}
-                        >
-                          <Zap className="text-yellow-400 flex-shrink-0" size={20} />
-                          <span>{item}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </ScrollArea>
-                </div>
+                {currentSlideData.content?.map((line, idx) => (
+                  <div key={idx} className="hover:text-yellow-400 cursor-pointer transition-colors">
+                    {line}
+                  </div>
+                ))}
               </div>
             )}
 
             {currentSlideData.type === 'content' && (
-              <div className="space-y-4 w-full h-full flex flex-col">
-                <div className="text-center flex-shrink-0">
-                  <h1 className="pixel-font text-2xl md:text-3xl lg:text-4xl font-bold text-yellow-400 mb-2">
+              <div className="flex flex-col md:flex-row gap-8 max-w-6xl w-full">
+                <div className="flex-1 text-cyan-300 pixel-font text-lg md:text-xl space-y-4 leading-relaxed">
+                  <div className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-pink-500 to-yellow-400 text-3xl md:text-4xl mb-4">
                     {currentSlideData.title}
-                  </h1>
-                  <h2 className="pixel-font text-lg md:text-xl lg:text-2xl text-yellow-300 mb-4">
-                    {currentSlideData.subtitle}
-                  </h2>
-                </div>
-                <div className="flex flex-col md:flex-row md:space-x-6 h-full overflow-hidden">
-                  <div className="md:flex-1 bg-black bg-opacity-80 border-4 border-yellow-400 p-4 rounded-lg overflow-y-auto space-y-2 pixel-font text-white text-base md:text-lg lg:text-xl">
-                    {currentSlideData.content?.map((line, idx) => (
-                      <p key={idx}>{line}</p>
-                    ))}
                   </div>
-                  {currentSlideData.images.length > 0 && (
-                    <div className="md:flex-1 mt-4 md:mt-0 flex flex-col items-center justify-center space-y-4">
-                      {currentSlideData.images.map((src, idx) => (
-                        <img
-                          key={idx}
-                          src={src}
-                          alt={`Bild ${idx + 1}`}
-                          className="max-h-48 md:max-h-64 rounded-lg border-2 border-yellow-400 shadow-lg"
-                        />
-                      ))}
-                    </div>
-                  )}
+                  {currentSlideData.content?.map((line, idx) => (
+                    <div key={idx}>{line}</div>
+                  ))}
+                </div>
+                <div className="flex-1 flex flex-col gap-4">
+                  {currentSlideData.images?.map((src, idx) => (
+                    <img
+                      key={idx}
+                      src={src}
+                      alt={`Bild ${idx + 1}`}
+                      className="rounded-xl border-2 border-cyan-400 shadow-lg object-contain max-h-[45vh]"
+                    />
+                  ))}
                 </div>
               </div>
             )}
           </div>
+        </div>
+
+        {/* Footer */}
+        <div className="bg-black bg-opacity-50 border-t-4 border-cyan-400 p-2 text-center text-cyan-400 pixel-font select-none text-sm">
+          {currentSlide + 1} / {slides.length}
         </div>
       </div>
     </div>
