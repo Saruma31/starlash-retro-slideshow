@@ -141,6 +141,7 @@ const RetroSlideshow = () => {
         '📚 Viel gelernt: Unity, Mechaniken, Fehlerbehebung',
         '🔄 Rückmeldungen aktiv genutzt zur Verbesserung',
         '',
+        '',
         '✅ Erfolgreiches Projekt 🎉'
       ],
       images: [
