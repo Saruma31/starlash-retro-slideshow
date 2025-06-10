@@ -50,10 +50,15 @@ const RetroSlideshow = () => {
       subtitle: 'Space-Shooter-Spiel',
       content: [
         '🚀 Selbst programmiertes Space-Shooter-Spiel',
+        '',
         '⚡ Mit Unity und C# entwickelt',
+        '',
         '🎮 Raumschiff steuern, Asteroiden zerstören',
+        '',
         '🌟 Power-Ups, Lebenssystem, Punktesystem',
+        '',
         '🎨 Eigenes Design',
+        '',
         '✅ Vorschau des Projekts'
       ],
       images: [
