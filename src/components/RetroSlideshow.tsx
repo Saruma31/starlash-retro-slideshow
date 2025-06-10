@@ -89,7 +89,6 @@ const RetroSlideshow = () => {
         '• Erster spielbarer Prototyp',
         '• Eigener Lernfortschritt mit Unity und C#',
         '• Positives Feedback von Mitschülern',
-        '• Präsentation als Website',
         '',
         '⚠️ SCHWIERIGKEITEN:',
         '• Schuss-Cooldown korrekt umsetzen',
