@@ -111,8 +111,15 @@ const RetroSlideshow = () => {
       subtitle: 'Erkenntnisse und Lernerfahrungen',
       content: [
         '🎯 Technische Herausforderungen gemeistert',
+        '',
+        '',
+        '',
         '📈 Kontinuierliche Verbesserung durch Rückmeldungen',
+        '',
+        '',
+        '',
         '🎮 Tieferes Verständnis für Spielmechaniken entwickelt'
+        
       ],
       images: [
         'https://i.imgur.com/EAhSpof.png',
