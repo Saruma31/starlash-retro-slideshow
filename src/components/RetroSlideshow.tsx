@@ -51,9 +51,9 @@ const RetroSlideshow = () => {
       content: [
         '🚀 Selbst programmiertes Space-Shooter-Spiel',
         '⚡ Mit Unity und C# entwickelt',
-        '🎮 Spieler steuert ein Raumschiff, weicht Asteroiden aus und schießt sie ab',
-        '🌟 Features: Lebenssystem, Punktesystem, Power-Ups, verschiedene Asteroiden',
-        '🎨 Eigenes Design: Hintergrund, Raumschiff, Laser etc.',
+        '🎮 Raumschiff steuern, Asteroiden zerstören',
+        '🌟 Power-Ups, Lebenssystem, Punktesystem',
+        '🎨 Eigenes Design',
         '✅ Vorschau des Projekts'
       ],
       images: [
@@ -66,13 +66,13 @@ const RetroSlideshow = () => {
       title: 'ARBEITSSCHRITTE',
       subtitle: 'Entwicklungsprozess',
       content: [
-        '💡 Projektidee festgelegt: Spielentwicklung mit Unity',
+        '💡 Projektidee festgelegt',
         '📚 Tutorials geschaut, Grundlagen gelernt',
-        '🎯 Spielfläche gestaltet (Hintergrund, Raumschiff, Asteroiden)',
-        '⚙️ Skripte erstellt: Bewegung, Schiessen, Kollision',
-        '📱 Menüs eingebaut: Start, Pause, Game Over',
-        '🔄 Feedback gesammelt → neue Features eingebaut',
-        '🛠️ Fehlerbehebung, Design angepasst, Soundeffekte ergänzt',
+        '🎯 Spielfläche gestaltet',
+        '⚙️ Skripte für Bewegung, Schiessen, Kollision',
+        '📱 Menüs eingebaut',
+        '🔄 Feedback gesammelt',
+        '🛠️ Fehlerbehebung, Design, Soundeffekte',
         '📋 Dokumentation und Präsentation vorbereitet'
       ],
       images: [
@@ -88,7 +88,6 @@ const RetroSlideshow = () => {
         '🎉 HIGHLIGHTS:',
         '• Erster spielbarer Prototyp',
         '• Eigener Lernfortschritt mit Unity und C#',
-        '• Power-Up-System und verschiedene Gegnerarten',
         '• Positives Feedback von Mitschülern',
         '• Präsentation als Website',
         '',
@@ -108,8 +107,6 @@ const RetroSlideshow = () => {
       subtitle: 'Erkenntnisse und Lernerfahrungen',
       content: [
         '🎯 Technische Herausforderungen gemeistert',
-        '🔧 Schuss-Cooldown erfolgreich implementiert',
-        '🖥️ UI-Integration mit Spiellogik verbunden',
         '📈 Kontinuierliche Verbesserung durch Rückmeldungen',
         '🎮 Tieferes Verständnis für Spielmechaniken entwickelt'
       ],
@@ -123,8 +120,8 @@ const RetroSlideshow = () => {
       title: 'FAZIT',
       subtitle: 'Projektergebnis',
       content: [
-        '✅ Spiel läuft stabil, ohne Bugs → Ziel erreicht',
-        '🎯 Viele geplante Features erfolgreich umgesetzt',
+        '✅ Spiel läuft ohne Fehler',
+        '🎯 Ideen erfolgreich umgesetzt',
         '🎮 Spiel macht Spass, wird mit der Zeit schwieriger',
         '📚 Viel gelernt: Unity, Mechaniken, Fehlerbehebung',
         '🔄 Rückmeldungen aktiv genutzt zur Verbesserung',
