@@ -149,14 +149,14 @@ const RetroSlideshow = () => {
      ]
     },
     {
-  type: 'content',
-  title: 'ZUSÄTZLICHE FEATURES',
-  subtitle: 'Platz für Bilder',
-  content: [],
-  images: [
-    '', // Platzhalter für Bild 1
-    ''  // Platzhalter für Bild 2
-  ]
+    type: 'content',
+    title: 'ZUSÄTZLICHE FEATURES',
+    subtitle: '',
+    content: [],
+    images: [
+      'https://i.imgur.com/AIYSfjK.png',
+      'https://i.imgur.com/LdmfvEz.png'
+    ]
     },
     {
       type: 'title',
