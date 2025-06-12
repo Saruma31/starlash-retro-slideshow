@@ -340,7 +340,7 @@ const RetroSlideshow = () => {
                       key={idx}
                       src={src}
                       alt={`Großes Bild ${idx + 1}`}
-                      className="max-w-[300vh] max-h-[60vh] object-contain border-4 border-cyan-400 rounded-lg"
+                      className="max-w-[250vh] max-h-[60vh] object-contain border-4 border-cyan-400 rounded-lg"
                     />
                   ))}
                 </div>
