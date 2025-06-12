@@ -157,7 +157,7 @@ const RetroSlideshow = () => {
     '', // Platzhalter für Bild 1
     ''  // Platzhalter für Bild 2
   ]
-}
+    },
     {
       type: 'title',
       title: 'ENDE DER PRÄSENTATION',
