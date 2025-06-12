@@ -149,6 +149,16 @@ const RetroSlideshow = () => {
      ]
     },
     {
+  type: 'content',
+  title: 'ZUSÄTZLICHE FEATURES',
+  subtitle: 'Platz für Bilder',
+  content: [],
+  images: [
+    '', // Platzhalter für Bild 1
+    ''  // Platzhalter für Bild 2
+  ]
+}
+    {
       type: 'title',
       title: 'ENDE DER PRÄSENTATION',
       subtitle: 'Vielen Dank fürs Zuhören',
