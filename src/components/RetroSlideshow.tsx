@@ -86,6 +86,86 @@ const RetroSlideshow = () => {
       ]
     },
     {
+      type: 'big-images',
+      title: 'ZWEI BILDER',
+      subtitle: '',
+      content: null,
+      images: [
+        'https://i.imgur.com/48BeYyx.png',
+        'https://i.imgur.com/AIYSfjK.png'
+      ]
+    },
+    {
+      type: 'big-images',
+      title: 'ZWEI BILDER',
+      subtitle: '',
+      content: null,
+      images: [
+        'https://i.imgur.com/48BeYyx.png',
+        'https://i.imgur.com/AIYSfjK.png'
+      ]
+    },
+    {
+      type: 'big-images',
+      title: 'ZWEI BILDER',
+      subtitle: '',
+      content: null,
+      images: [
+        'https://i.imgur.com/48BeYyx.png',
+        'https://i.imgur.com/AIYSfjK.png'
+      ]
+    },
+    {
+      type: 'big-images',
+      title: 'ZWEI BILDER',
+      subtitle: '',
+      content: null,
+      images: [
+        'https://i.imgur.com/48BeYyx.png',
+        'https://i.imgur.com/AIYSfjK.png'
+      ]
+    },
+    {
+      type: 'big-images',
+      title: 'ZWEI BILDER',
+      subtitle: '',
+      content: null,
+      images: [
+        'https://i.imgur.com/48BeYyx.png',
+        'https://i.imgur.com/AIYSfjK.png'
+      ]
+    },
+    {
+      type: 'big-images',
+      title: 'ZWEI BILDER',
+      subtitle: '',
+      content: null,
+      images: [
+        'https://i.imgur.com/48BeYyx.png',
+        'https://i.imgur.com/AIYSfjK.png'
+      ]
+    },
+    {
+      type: 'big-images',
+      title: 'ZWEI BILDER',
+      subtitle: '',
+      content: null,
+      images: [
+        'https://i.imgur.com/48BeYyx.png',
+        'https://i.imgur.com/AIYSfjK.png'
+      ]
+    },
+    {
+      type: 'big-images',
+      title: 'ZWEI BILDER',
+      subtitle: '',
+      content: null,
+      images: [
+        'https://i.imgur.com/48BeYyx.png',
+        'https://i.imgur.com/AIYSfjK.png'
+      ]
+    },
+    {
       type: 'content',
       title: 'HIGHLIGHTS & SCHWIERIGKEITEN',
       subtitle: 'Erfolge und Herausforderungen',
