@@ -367,10 +367,9 @@ const RetroSlideshow = () => {
                     {currentSlideData.subtitle}
                   </h2>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-start flex-1">
-                  <div className="col-span-2 bg-black bg-opacity-70 border-4 border-cyan-400 p-4 md:p-6 rounded-lg">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-start">
+                   <div className="col-span-2 bg-black bg-opacity-70 border-4 border-cyan-400 p-4 md:p-6 rounded-lg" style={{ height: '400px', overflowY: 'auto' }}>
                     <div className="space-y-2 pr-4">
-                      <div className="space-y-2 pr-4">
                         {currentSlideData.content?.map((item, i) => (
                           <div
                             key={i}
