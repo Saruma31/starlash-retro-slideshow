@@ -334,7 +334,7 @@ const RetroSlideshow = () => {
     <h1 className="pixel-font text-4xl font-bold text-cyan-400 mt-4">
       {currentSlideData.title}
     </h1>
-    <div className="grid grid-cols-2 gap-8 px-8 w-full max-w-[90vw]">
+    <div className="grid grid-cols-2 gap-4 px-8 w-full max-w-[100vw]">
       {(currentSlideData.images || []).slice(0, 2).map((src, idx) => (
         <img
           key={idx}
