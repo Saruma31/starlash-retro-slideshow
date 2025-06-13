@@ -329,19 +329,16 @@ const RetroSlideshow = () => {
               </div>
             )}
 
-  {currentSlideData.type === 'big-images' && (
-  <div className="flex flex-1 w-full justify-center space-x-2 p-4">
-  {currentSlideData.images?.map((src, idx) => (
-    <img
-      key={idx}
-      src={src}
-      alt={`Großes Bild ${idx + 1}`}
-      className="w-[49%] h-auto object-contain border-4 border-cyan-400 rounded-lg"
-    />
-  ))}
-</div>
-
-   
+            {currentSlideData.type === 'big-images' && (
+              <div className="flex flex-1 w-full justify-center space-x-2 p-4">
+                {currentSlideData.images?.map((src, idx) => (
+                  <img
+                    key={idx}
+                    src={src}
+                    alt={`Großes Bild ${idx + 1}`}
+                    className="w-[49%] h-auto object-contain border-4 border-cyan-400 rounded-lg"
+                  />
+                ))}
               </div>
             )}
           </div>
