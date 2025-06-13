@@ -330,27 +330,25 @@ const RetroSlideshow = () => {
             )}
 
   {currentSlideData.type === 'big-images' && (
-  <div className="w-full h-full flex flex-col items-center justify-start space-y-6">
-    <h1 className="pixel-font text-4xl font-bold text-cyan-400 mt-8">
+  <div className="w-full h-full flex flex-col items-center justify-start py-8 space-y-8">
+    {/* Titel */}
+    <h1 className="pixel-font text-4xl font-bold text-cyan-400 text-center">
       {currentSlideData.title}
     </h1>
-    
-    {/* Bilder-Container */}
-    <div className="w-full flex justify-center mt-8">
-      <div className="grid grid-cols-2 gap-6 px-4 max-w-[90vw]">
-        {currentSlideData.images?.map((src, idx) => (
-          <img
-            key={idx}
-            src={src}
-            alt={`Großes Bild ${idx + 1}`}
-            className="w-full h-auto max-h-[85vh] object-contain border-4 border-cyan-400 rounded-lg"
-          />
-        ))}
-      </div>
+
+    {/* Bildreihe */}
+    <div className="flex flex-row justify-center items-center gap-8 px-4 w-full max-w-[95vw]">
+      {currentSlideData.images?.slice(0, 2).map((src, idx) => (
+        <img
+          key={idx}
+          src={src}
+          alt={`Bild ${idx + 1}`}
+          className="w-[45vw] aspect-video object-cover border-4 border-cyan-400 rounded-lg"
+        />
+      ))}
     </div>
   </div>
-)}
-    
+)}   
               </div>
             )}
           </div>
