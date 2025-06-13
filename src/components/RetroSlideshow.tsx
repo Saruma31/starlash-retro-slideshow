@@ -330,7 +330,7 @@ const RetroSlideshow = () => {
             )}
 
   {currentSlideData.type === 'big-images' && (
-  <div className="w-full h-full flex flex-col items-center justify-start py-8 space-y-8">
+  <div className="w-full h-full flex flex-col items-center justify-start py-8 space-y-8 bg-black">
     {/* Titel */}
     <h1 className="pixel-font text-4xl font-bold text-cyan-400 text-center">
       {currentSlideData.title}
@@ -348,7 +348,8 @@ const RetroSlideshow = () => {
       ))}
     </div>
   </div>
-)}   
+)}
+   
               </div>
             )}
           </div>
