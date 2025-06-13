@@ -350,6 +350,11 @@ const RetroSlideshow = () => {
           </div>
         </div>
       </div>
+<div className="absolute bottom-0 w-full text-center py-2 bg-black bg-opacity-50 border-t-2 border-cyan-400 z-20">
+  <span className="pixel-font text-cyan-300 text-sm">
+    {currentSlide + 1} / {slides.length}
+  </span>
+</div>
     </div>
   );
 };
