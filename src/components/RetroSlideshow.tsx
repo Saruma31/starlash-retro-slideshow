@@ -294,7 +294,7 @@ const RetroSlideshow = () => {
                         {currentSlideData.content?.map((item, i) => (
                           <div
                             key={i}
-                            className={pixel-font ${
+                            className={`pixel-font ${
                               item.startsWith('🎉') || item.startsWith('⚠️')
                                 ? 'text-yellow-400 font-bold text-lg md:text-xl lg:text-2xl'
                                 : item.startsWith('•')
@@ -302,7 +302,7 @@ const RetroSlideshow = () => {
                                 : item === ''
                                 ? 'h-2'
                                 : 'text-white text-sm md:text-base lg:text-lg'
-                            } leading-relaxed break-words}
+                            } leading-relaxed break-words`}
                           >
                             {item}
                           </div>
