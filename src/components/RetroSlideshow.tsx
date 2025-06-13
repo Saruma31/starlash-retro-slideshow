@@ -278,38 +278,44 @@ const RetroSlideshow = () => {
             )}
 
             {currentSlideData.type === 'content' && (
-              <div className="space-y-4 w-full h-full flex flex-col">
-                <div className="text-center flex-shrink-0">
-                  <h1 className="pixel-font text-2xl md:text-3xl lg:text-4xl font-bold text-cyan-400 mb-2">
-                    {currentSlideData.title}
-                  </h1>
-                  <h2 className="pixel-font text-lg md:text-xl lg:text-2xl text-pink-400">
-                    {currentSlideData.subtitle}
-                  </h2>
+  <div className="flex justify-center items-center flex-1">
+    <div className="space-y-4 max-w-screen-lg w-full px-4">
+      <div className="text-center flex-shrink-0">
+        <h1 className="pixel-font text-2xl md:text-3xl lg:text-4xl font-bold text-cyan-400 mb-2">
+          {currentSlideData.title}
+        </h1>
+        <h2 className="pixel-font text-lg md:text-xl lg:text-2xl text-pink-400">
+          {currentSlideData.subtitle}
+        </h2>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-start">
+        <div className="col-span-2 bg-black bg-opacity-70 border-4 border-cyan-400 p-4 md:p-6 rounded-lg h-full">
+          <ScrollArea className="h-full">
+            <div className="space-y-2 pr-4">
+              {currentSlideData.content?.map((item, i) => (
+                <div
+                  key={i}
+                  className={`pixel-font ${
+                    item.startsWith('🎉') || item.startsWith('⚠️')
+                      ? 'text-yellow-400 font-bold text-lg md:text-xl lg:text-2xl'
+                      : item.startsWith('•')
+                      ? 'text-cyan-300 ml-4 md:ml-6 text-sm md:text-base lg:text-lg'
+                      : item === ''
+                      ? 'h-2'
+                      : 'text-white text-sm md:text-base lg:text-lg'
+                  } leading-relaxed break-words`}
+                >
+                  {item}
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-start flex-1">
-                  <div className="col-span-2 bg-black bg-opacity-70 border-4 border-cyan-400 p-4 md:p-6 rounded-lg h-full">
-                    <ScrollArea className="h-full">
-                      <div className="space-y-2 pr-4">
-                        {currentSlideData.content?.map((item, i) => (
-                          <div
-                            key={i}
-                            className={`pixel-font ${
-                              item.startsWith('🎉') || item.startsWith('⚠️')
-                                ? 'text-yellow-400 font-bold text-lg md:text-xl lg:text-2xl'
-                                : item.startsWith('•')
-                                ? 'text-cyan-300 ml-4 md:ml-6 text-sm md:text-base lg:text-lg'
-                                : item === ''
-                                ? 'h-2'
-                                : 'text-white text-sm md:text-base lg:text-lg'
-                            } leading-relaxed break-words`}
-                          >
-                            {item}
-                          </div>
-                        ))}
-                      </div>
-                    </ScrollArea>
-                  </div>
+              ))}
+            </div>
+          </ScrollArea>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
+
 
                   <div className="flex flex-col gap-4">
                     {(currentSlideData.images || []).length > 0 ? (
