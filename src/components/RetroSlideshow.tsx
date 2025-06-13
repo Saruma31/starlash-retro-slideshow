@@ -156,6 +156,16 @@ const RetroSlideshow = () => {
       ]
     },
     {
+      type: 'big-images',
+      title: 'ZWEI BILDER',
+      subtitle: '',
+      content: null,
+      images: [
+        'https://i.imgur.com/48BeYyx.png',
+        'https://i.imgur.com/AIYSfjK.png'
+      ]
+    },
+    {
       type: 'content',
       title: 'HIGHLIGHTS & SCHWIERIGKEITEN',
       subtitle: 'Erfolge und Herausforderungen',
@@ -295,88 +305,69 @@ const RetroSlideshow = () => {
             {currentSlideData.type === 'title' && (
               <div className="text-center space-y-6 w-full flex flex-col items-center">
                 <div className="space-y-4">
-                  <div className={`pixel-font font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-pink-500 to-yellow-400 animate-pulse ${
-                    currentSlide === slides.length - 1
-                      ? 'text-3xl md:text-4xl lg:text-5xl'
-                      : 'text-4xl md:text-6xl lg:text-7xl'
-                  }`}>
+                  <div className={`pixel-font font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-purple-400 text-6xl`}>
                     {currentSlideData.title}
                   </div>
-                  <div className="text-cyan-400 pixel-font text-xl md:text-2xl">
-                    {currentSlideData.subtitle}
-                  </div>
+                  <div className="pixel-font text-lg text-gray-200">{currentSlideData.subtitle}</div>
                 </div>
                 {currentSlideData.images && currentSlideData.images.length > 0 && (
-                  <div className="mt-6 flex justify-center space-x-4">
-                    {currentSlideData.images.map((img, idx) => (
-                      <img
-                        key={idx}
-                        src={img}
-                        alt=""
-                        className="max-h-48 object-contain rounded-md border-2 border-cyan-400 shadow-lg"
-                      />
-                    ))}
-                  </div>
+                  <img src={currentSlideData.images[0]} alt="Titelbild" className="max-w-full max-h-96 object-contain rounded-md border-4 border-cyan-400" />
                 )}
               </div>
             )}
 
             {currentSlideData.type === 'menu' && (
-              <div className="w-full max-w-2xl text-cyan-400 pixel-font text-xl">
-                <div className="mb-8 text-center font-bold text-3xl">{currentSlideData.title}</div>
-                <ul className="space-y-4 list-disc list-inside">
+              <div className="w-full flex flex-col items-center space-y-2">
+                <div className="pixel-font font-bold text-4xl text-cyan-400">{currentSlideData.title}</div>
+                <div className="pixel-font text-xl text-gray-300 max-w-md">
                   {currentSlideData.content?.map((item, idx) => (
-                    <li key={idx}>{item}</li>
+                    <div key={idx} className="hover:text-yellow-400 cursor-pointer transition-colors py-1">
+                      {item}
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
             )}
 
             {currentSlideData.type === 'content' && (
-              <div className="w-full max-w-3xl text-cyan-400 pixel-font">
-                <div className="mb-4 font-bold text-3xl text-center">{currentSlideData.title}</div>
-                <div className="mb-6 text-center text-xl">{currentSlideData.subtitle}</div>
-                <ScrollArea className="h-96 p-4 border-2 border-cyan-400 rounded-md">
-                  <ul className="space-y-3 list-disc list-inside">
-                    {currentSlideData.content?.map((line, idx) => (
-                      <li key={idx}>{line}</li>
-                    ))}
-                  </ul>
-                </ScrollArea>
-                {currentSlideData.images && currentSlideData.images.length > 0 && (
-                  <div className="mt-6 flex flex-wrap justify-center gap-6">
-                    {currentSlideData.images.map((img, idx) => (
-                      <img
-                        key={idx}
-                        src={img}
-                        alt=""
-                        className="max-h-48 object-contain rounded-md border-2 border-cyan-400 shadow-lg"
-                      />
-                    ))}
-                  </div>
-                )}
+              <div className="max-w-5xl w-full flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-12">
+                <div className="flex-1 pixel-font text-cyan-300 text-lg whitespace-pre-line leading-relaxed">
+                  {currentSlideData.content?.map((line, idx) => (
+                    <div key={idx} className="mb-2">{line}</div>
+                  ))}
+                </div>
+                <div className="flex-1 flex flex-col space-y-4">
+                  {currentSlideData.images?.map((src, idx) => (
+                    <img
+                      key={idx}
+                      src={src}
+                      alt={`Bild ${idx + 1}`}
+                      className="rounded-md border-4 border-cyan-400 max-h-72 object-contain"
+                    />
+                  ))}
+                </div>
               </div>
             )}
 
             {currentSlideData.type === 'big-images' && (
-              <div className="w-full flex justify-center gap-12">
-                {currentSlideData.images.map((img, idx) => (
+              <div className="w-full flex justify-center space-x-8">
+                {currentSlideData.images?.map((src, idx) => (
                   <img
                     key={idx}
-                    src={img}
-                    alt=""
-                    className="max-h-[28rem] object-contain rounded-md border-2 border-cyan-400 shadow-lg"
+                    src={src}
+                    alt={`Großes Bild ${idx + 1}`}
+                    className="max-w-1/2 max-h-[80vh] object-contain rounded-md border-4 border-cyan-400"
                   />
                 ))}
               </div>
             )}
           </div>
         </div>
+      </div>
 
-        {/* NEUE LEISTE MIT SEITENZAHL */}
-        <div className="bg-black bg-opacity-70 border-t-4 border-cyan-400 p-3 text-cyan-400 pixel-font text-center select-none">
-          Folie {currentSlide + 1} von {slides.length}
-        </div>
+      {/* Seitenzahl unten mittig */}
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20 pixel-font text-cyan-400 bg-black bg-opacity-60 px-4 py-1 rounded border-2 border-cyan-400 select-none">
+        {currentSlide + 1} / {slides.length}
       </div>
     </div>
   );
