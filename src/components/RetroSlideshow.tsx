@@ -156,16 +156,6 @@ const RetroSlideshow = () => {
       ]
     },
     {
-      type: 'big-images',
-      title: 'ZWEI BILDER',
-      subtitle: '',
-      content: null,
-      images: [
-        'https://i.imgur.com/48BeYyx.png',
-        'https://i.imgur.com/AIYSfjK.png'
-      ]
-    },
-    {
       type: 'content',
       title: 'HIGHLIGHTS & SCHWIERIGKEITEN',
       subtitle: 'Erfolge und Herausforderungen',
@@ -312,122 +302,80 @@ const RetroSlideshow = () => {
                   }`}>
                     {currentSlideData.title}
                   </div>
-                  <div className="text-xl md:text-2xl lg:text-3xl text-cyan-300 pixel-font">
+                  <div className="text-cyan-400 pixel-font text-xl md:text-2xl">
                     {currentSlideData.subtitle}
                   </div>
                 </div>
-                {currentSlide === slides.length - 1 && currentSlideData.images?.[0] && (
-                  <img
-                    src={currentSlideData.images[0]}
-                    alt="Dankesbild"
-                    className="mt-6 h-[60vh] w-auto object-contain border-2 border-cyan-400 rounded-xl shadow-lg"
-                  />
+                {currentSlideData.images && currentSlideData.images.length > 0 && (
+                  <div className="mt-6 flex justify-center space-x-4">
+                    {currentSlideData.images.map((img, idx) => (
+                      <img
+                        key={idx}
+                        src={img}
+                        alt=""
+                        className="max-h-48 object-contain rounded-md border-2 border-cyan-400 shadow-lg"
+                      />
+                    ))}
+                  </div>
                 )}
-                <div className="flex justify-center space-x-8">
-                  <div className="text-4xl md:text-6xl animate-bounce">🚀</div>
-                  <div className="text-4xl md:text-6xl animate-bounce delay-100">⭐</div>
-                  <div className="text-4xl md:text-6xl animate-bounce delay-200">👾</div>
-                </div>
               </div>
             )}
 
             {currentSlideData.type === 'menu' && (
-              <div className="space-y-6 w-full h-full flex flex-col">
-                <div className="text-center flex-shrink-0">
-                  <h1 className="pixel-font text-3xl md:text-4xl lg:text-5xl font-bold text-cyan-400 mb-4">
-                    {currentSlideData.title}
-                  </h1>
-                </div>
-                <div className="bg-black bg-opacity-70 border-4 border-cyan-400 p-6 rounded-lg flex-1">
-                  <ScrollArea className="h-full">
-                    <div className="space-y-3">
-                      {currentSlideData.content?.map((item, i) => (
-                        <div
-                          key={i}
-                          className="pixel-font text-lg md:text-xl lg:text-2xl text-white hover:text-cyan-400 transition-colors cursor-pointer flex items-center space-x-4 p-2 hover:bg-cyan-400 hover:bg-opacity-10 rounded"
-                          onClick={() => goToSlide(i + 2)}
-                        >
-                          <Zap className="text-yellow-400 flex-shrink-0" size={20} />
-                          <span>{item}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </ScrollArea>
-                </div>
+              <div className="w-full max-w-2xl text-cyan-400 pixel-font text-xl">
+                <div className="mb-8 text-center font-bold text-3xl">{currentSlideData.title}</div>
+                <ul className="space-y-4 list-disc list-inside">
+                  {currentSlideData.content?.map((item, idx) => (
+                    <li key={idx}>{item}</li>
+                  ))}
+                </ul>
               </div>
             )}
 
             {currentSlideData.type === 'content' && (
-              <div className="space-y-4 w-full h-full flex flex-col">
-                <div className="text-center flex-shrink-0">
-                  <h1 className="pixel-font text-2xl md:text-3xl lg:text-4xl font-bold text-cyan-400 mb-2">
-                    {currentSlideData.title}
-                  </h1>
-                  <h2 className="pixel-font text-lg md:text-xl lg:text-2xl text-pink-400">
-                    {currentSlideData.subtitle}
-                  </h2>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-start flex-1">
-                  <div className="col-span-2 bg-black bg-opacity-70 border-4 border-cyan-400 p-4 md:p-6 rounded-lg h-full">
-                    <ScrollArea className="h-full">
-                      <div className="space-y-2 pr-4">
-                        {currentSlideData.content?.map((item, i) => (
-                          <div
-                            key={i}
-                            className={`pixel-font ${
-                              item.startsWith('🎉') || item.startsWith('⚠️')
-                                ? 'text-yellow-400 font-bold text-lg md:text-xl lg:text-2xl'
-                                : item.startsWith('•')
-                                ? 'text-cyan-300 ml-4 md:ml-6 text-sm md:text-base lg:text-lg'
-                                : item === ''
-                                ? 'h-2'
-                                : 'text-white text-sm md:text-base lg:text-lg'
-                            } leading-relaxed break-words`}
-                          >
-                            {item}
-                          </div>
-                        ))}
-                      </div>
-                    </ScrollArea>
+              <div className="w-full max-w-3xl text-cyan-400 pixel-font">
+                <div className="mb-4 font-bold text-3xl text-center">{currentSlideData.title}</div>
+                <div className="mb-6 text-center text-xl">{currentSlideData.subtitle}</div>
+                <ScrollArea className="h-96 p-4 border-2 border-cyan-400 rounded-md">
+                  <ul className="space-y-3 list-disc list-inside">
+                    {currentSlideData.content?.map((line, idx) => (
+                      <li key={idx}>{line}</li>
+                    ))}
+                  </ul>
+                </ScrollArea>
+                {currentSlideData.images && currentSlideData.images.length > 0 && (
+                  <div className="mt-6 flex flex-wrap justify-center gap-6">
+                    {currentSlideData.images.map((img, idx) => (
+                      <img
+                        key={idx}
+                        src={img}
+                        alt=""
+                        className="max-h-48 object-contain rounded-md border-2 border-cyan-400 shadow-lg"
+                      />
+                    ))}
                   </div>
-
-                  <div className="flex flex-col gap-4">
-                    {(currentSlideData.images || []).length > 0 ? (
-                      currentSlideData.images.map((src, idx) => (
-                        <img
-                          key={idx}
-                          src={src}
-                          alt={`Bild ${idx + 1}`}
-                          className="w-full aspect-video object-cover border-2 border-cyan-400 rounded-lg"
-                        />
-                      ))
-                    ) : (
-                      <div className="text-cyan-400 pixel-font">Keine Bilder vorhanden</div>
-                    )}
-                  </div>
-                </div>
+                )}
               </div>
             )}
 
             {currentSlideData.type === 'big-images' && (
-  <div className="flex flex-col flex-1 w-full justify-center space-y-4 p-4">
-    <h2 className="pixel-font text-3xl font-bold text-cyan-400 text-center">
-      ZWEI BILDER
-    </h2>
-    <div className="flex w-full justify-center space-x-2">
-      {currentSlideData.images?.map((src, idx) => (
-        <img
-          key={idx}
-          src={src}
-          alt={`Großes Bild ${idx + 1}`}
-          className="w-[49%] h-auto object-contain border-4 border-cyan-400 rounded-lg"
-        />
-      ))}
-    </div>
-  </div>
-)}
-
+              <div className="w-full flex justify-center gap-12">
+                {currentSlideData.images.map((img, idx) => (
+                  <img
+                    key={idx}
+                    src={img}
+                    alt=""
+                    className="max-h-[28rem] object-contain rounded-md border-2 border-cyan-400 shadow-lg"
+                  />
+                ))}
+              </div>
+            )}
           </div>
+        </div>
+
+        {/* NEUE LEISTE MIT SEITENZAHL */}
+        <div className="bg-black bg-opacity-70 border-t-4 border-cyan-400 p-3 text-cyan-400 pixel-font text-center select-none">
+          Folie {currentSlide + 1} von {slides.length}
         </div>
       </div>
     </div>
