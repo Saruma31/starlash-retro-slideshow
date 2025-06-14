@@ -73,7 +73,7 @@ const RetroSlideshow = () => {
       content: [
         '💡 Projektidee festgelegt',
         '📚 Tutorials geschaut, Grundlagen gelernt',
-        '🎯 Spielfläche gestaltet',
+        '🎯 Spielobjekte gestaltet',
         '⚙️ Skripte für Bewegung, Schiessen, Kollision',
         '📱 Menüs eingebaut',
         '🔄 Feedback gesammelt',
@@ -91,8 +91,8 @@ const RetroSlideshow = () => {
       subtitle: '',
       content: null,
       images: [
-        'https://i.imgur.com/48BeYyx.png',
-        'https://i.imgur.com/AIYSfjK.png'
+        'https://i.imgur.com/y3ndaEl.jpeg',
+        'https://i.imgur.com/ETuc7ES.jpeg'
       ]
     },
     {
@@ -101,17 +101,17 @@ const RetroSlideshow = () => {
       subtitle: '',
       content: null,
       images: [
-        'https://i.imgur.com/48BeYyx.png',
-        'https://i.imgur.com/AIYSfjK.png'
+        'https://i.imgur.com/kvoyjbm.png',
+        'https://i.imgur.com/wtt1Tn6.jpeg'
       ]
     },
     {
       type: 'big-images',
-      title: 'SPIELFLÄCHE GESTALTET',
+      title: 'SPIELOBJEKTE GESTALTET',
       subtitle: '',
       content: null,
       images: [
-        'https://i.imgur.com/48BeYyx.png',
+        'https://i.imgur.com/jqTJnHV.png',
         'https://i.imgur.com/AIYSfjK.png'
       ]
     },
@@ -141,8 +141,8 @@ const RetroSlideshow = () => {
       subtitle: '',
       content: null,
       images: [
-        'https://i.imgur.com/48BeYyx.png',
-        'https://i.imgur.com/AIYSfjK.png'
+        'https://i.imgur.com/F9FEbmP.jpeg',
+        'https://i.imgur.com/5DmNfNZ.png'
       ]
     },
     {
