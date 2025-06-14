@@ -233,17 +233,6 @@ const RetroSlideshow = () => {
       subtitle: 'Vielen Dank fürs Zuhören',
       content: null,
       images: ['https://i.imgur.com/zQ4RG2j.jpeg']
-    },
-    // NEUE FOLIE: Titel + 2 große Bilder, kein Text
-    {
-      type: 'big-images',
-      title: 'ZWEI BILDER',
-      subtitle: '',
-      content: null,
-      images: [
-        'https://i.imgur.com/48BeYyx.png',
-        'https://i.imgur.com/AIYSfjK.png'
-      ]
     }
   ];
 
