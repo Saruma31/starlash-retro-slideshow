@@ -287,9 +287,9 @@ const RetroSlideshow = () => {
                     {currentSlideData.subtitle}
                   </h2>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-start flex-1">
-                  <div className="col-span-2 bg-black bg-opacity-70 border-4 border-cyan-400 p-4 md:p-6 rounded-lg h-full">
-                    <ScrollArea className="h-full">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-start flex-1 pb-12">
+                  <div className="col-span-3 bg-black bg-opacity-70 border-4 border-cyan-400 p-4 md:p-6 rounded-lg max-h-[65vh] overflow-hidden">
+                    <ScrollArea className="h-full max-h-[60vh]">
                       <div className="space-y-2 pr-4">
                         {currentSlideData.content?.map((item, i) => (
                           <div
@@ -311,7 +311,7 @@ const RetroSlideshow = () => {
                     </ScrollArea>
                   </div>
 
-                  <div className="flex flex-col gap-4">
+                  <div className="col-span-1 flex flex-col gap-4">
                     {(currentSlideData.images || []).length > 0 ? (
                       currentSlideData.images.map((src, idx) => (
                         <img
