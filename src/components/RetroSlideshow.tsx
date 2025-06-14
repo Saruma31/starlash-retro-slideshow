@@ -87,7 +87,7 @@ const RetroSlideshow = () => {
     },
     {
       type: 'big-images',
-      title: 'ZWEI BILDER',
+      title: 'PROJEKTIDEE FESTGELEGT',
       subtitle: '',
       content: null,
       images: [
@@ -97,7 +97,7 @@ const RetroSlideshow = () => {
     },
     {
       type: 'big-images',
-      title: 'ZWEI BILDER',
+      title: 'TUTORIALS GESCHAUT, GRUNDLAGEN GELERNT',
       subtitle: '',
       content: null,
       images: [
@@ -107,7 +107,7 @@ const RetroSlideshow = () => {
     },
     {
       type: 'big-images',
-      title: 'ZWEI BILDER',
+      title: 'SPIELFLÄCHE GESTALTET',
       subtitle: '',
       content: null,
       images: [
@@ -117,7 +117,7 @@ const RetroSlideshow = () => {
     },
     {
       type: 'big-images',
-      title: 'ZWEI BILDER',
+      title: 'SKRIPTE FÜR BEWEGUNG, SCHIESSEN, KOLLISION',
       subtitle: '',
       content: null,
       images: [
@@ -127,7 +127,7 @@ const RetroSlideshow = () => {
     },
     {
       type: 'big-images',
-      title: 'ZWEI BILDER',
+      title: 'MENÜS EINGEBAUT',
       subtitle: '',
       content: null,
       images: [
@@ -137,7 +137,7 @@ const RetroSlideshow = () => {
     },
     {
       type: 'big-images',
-      title: 'ZWEI BILDER',
+      title: 'FEEDBACK GESAMMELT',
       subtitle: '',
       content: null,
       images: [
@@ -147,7 +147,7 @@ const RetroSlideshow = () => {
     },
     {
       type: 'big-images',
-      title: 'ZWEI BILDER',
+      title: 'FEHLERBEHEBUNG, DESIGN, SOUNDEFFEKTE',
       subtitle: '',
       content: null,
       images: [
@@ -157,7 +157,7 @@ const RetroSlideshow = () => {
     },
     {
       type: 'big-images',
-      title: 'ZWEI BILDER',
+      title: 'DOKUMENTATION UND PRÄSENTATION VORBEREITET',
       subtitle: '',
       content: null,
       images: [
