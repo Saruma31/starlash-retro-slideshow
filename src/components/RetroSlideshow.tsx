@@ -252,14 +252,14 @@ const RetroSlideshow = () => {
             )}
 
             {currentSlideData.type === 'menu' && (
-              <div className="space-y-6 w-full h-full flex flex-col">
+              <div className="space-y-6 w-full h-full flex flex-col pb-12">
                 <div className="text-center flex-shrink-0">
                   <h1 className="pixel-font text-3xl md:text-4xl lg:text-5xl font-bold text-cyan-400 mb-4">
                     {currentSlideData.title}
                   </h1>
                 </div>
-                <div className="bg-black bg-opacity-70 border-4 border-cyan-400 p-6 rounded-lg flex-1">
-                  <ScrollArea className="h-full">
+                <div className="bg-black bg-opacity-70 border-4 border-cyan-400 p-6 rounded-lg flex-1 max-h-[70vh]">
+                  <ScrollArea className="h-full max-h-[60vh]">
                     <div className="space-y-3">
                       {currentSlideData.content?.map((item, i) => (
                         <div
