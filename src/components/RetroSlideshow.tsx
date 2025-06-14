@@ -121,7 +121,7 @@ const RetroSlideshow = () => {
       subtitle: '',
       content: null,
       images: [
-        'https://i.imgur.com/48BeYyx.png',
+        'https://i.imgur.com/8jpv0oW.png',
         'https://i.imgur.com/AIYSfjK.png'
       ]
     },
@@ -131,8 +131,8 @@ const RetroSlideshow = () => {
       subtitle: '',
       content: null,
       images: [
-        'https://i.imgur.com/48BeYyx.png',
-        'https://i.imgur.com/AIYSfjK.png'
+        'https://i.imgur.com/kHTWx7J.png',
+        'https://i.imgur.com/Qmyq7PY.png'
       ]
     },
     {
@@ -152,7 +152,7 @@ const RetroSlideshow = () => {
       content: null,
       images: [
         'https://i.imgur.com/48BeYyx.png',
-        'https://i.imgur.com/AIYSfjK.png'
+        'https://i.imgur.com/gRjbCQj.jpeg'
       ]
     },
     {
@@ -161,8 +161,8 @@ const RetroSlideshow = () => {
       subtitle: '',
       content: null,
       images: [
-        'https://i.imgur.com/48BeYyx.png',
-        'https://i.imgur.com/AIYSfjK.png'
+        'https://i.imgur.com/Jpto0QG.png',
+        'https://i.imgur.com/s6Xdh4m.png'
       ]
     },
     {
