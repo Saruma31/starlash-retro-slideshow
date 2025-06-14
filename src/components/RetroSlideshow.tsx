@@ -122,7 +122,7 @@ const RetroSlideshow = () => {
       content: null,
       images: [
         'https://i.imgur.com/8jpv0oW.png',
-        'https://i.imgur.com/CHKOXjR.png'
+        'https://i.imgur.com/7gPp3Hr.png'
       ]
     },
     {
