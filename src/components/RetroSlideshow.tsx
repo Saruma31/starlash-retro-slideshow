@@ -401,7 +401,7 @@ const RetroSlideshow = () => {
             {currentSlideData.type === 'big-images' && (
   <div className="flex flex-col flex-1 w-full justify-center space-y-4 p-4">
     <h2 className="pixel-font text-3xl font-bold text-cyan-400 text-center">
-      ZWEI BILDER
+      {currentSlideData.title}
     </h2>
     <div className="flex w-full justify-center space-x-2">
       {currentSlideData.images?.map((src, idx) => (
