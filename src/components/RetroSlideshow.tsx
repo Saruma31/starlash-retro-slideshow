@@ -122,7 +122,7 @@ const RetroSlideshow = () => {
       content: null,
       images: [
         'https://i.imgur.com/8jpv0oW.png',
-        'https://i.imgur.com/7gPp3Hr.png'
+        'https://i.imgur.com/936lqsJ.png'
       ]
     },
     {
@@ -161,7 +161,7 @@ const RetroSlideshow = () => {
       subtitle: '',
       content: null,
       images: [
-        'https://i.imgur.com/Jpto0QG.png',
+        'https://i.imgur.com/dzOehiU.png',
         'https://i.imgur.com/s6Xdh4m.png'
       ]
     },
