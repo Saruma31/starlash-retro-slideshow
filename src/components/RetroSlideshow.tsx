@@ -191,7 +191,7 @@ const RetroSlideshow = () => {
       subtitle: 'Erkenntnisse und Lernerfahrungen',
       content: [
         '',
-        '🎯 Ein Spiel erstellen, welches spass macht und gut aussieht',
+        '🎯 Das Spiel soll spass machen und gut aussehen',
         '',
         '',
         '',
