@@ -57,8 +57,6 @@ const RetroSlideshow = () => {
         '',
         '🌟 Power-Ups, Lebenssystem, Punktesystem',
         '',
-        '🎨 Eigenes Design',
-        '',
         '✅ Vorschau des Projekts'
       ],
       images: [
@@ -177,7 +175,6 @@ const RetroSlideshow = () => {
         '',
         '⚠️ SCHWIERIGKEITEN:',
         '• Schuss-Cooldown korrekt umsetzen',
-        '• Kombination von Spiellogik und UI',
         '• Ideensuche'
       ],
       images: [
@@ -191,7 +188,7 @@ const RetroSlideshow = () => {
       subtitle: 'Erkenntnisse und Lernerfahrungen',
       content: [
         '',
-        '🎯 Das Spiel soll Spass machen und gut aussehen',
+        '🎯 Das Spiel soll gut aussehen und Spass machen',
         '',
         '',
         '',
@@ -214,9 +211,8 @@ const RetroSlideshow = () => {
       content: [
         '✅ Spiel läuft ohne Fehler',
         '🎯 Ideen erfolgreich umgesetzt',
-        '🎮 Spiel macht Spass, wird mit der Zeit schwieriger',
+        '🎮 Erstellung des Spiels hat Spass gemacht',
         '📚 Viel gelernt: Unity, Mechaniken, Fehlerbehebung',
-        '🔄 Rückmeldungen aktiv genutzt zur Verbesserung',
         '',
         '',
         '✅ Erfolgreiches Projekt 🎉'
